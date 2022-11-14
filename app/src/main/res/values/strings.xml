@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">Ecommerce</string>
     <string name="category_icon">Category icon</string>
+    <string name="select_category">Select category</string>
+    <string name="view_all">view all</string>
+    <string name="ic_phones">Phones</string>
+    <string name="ic_computer">Computer</string>
+    <string name="ic_health">Health</string>
+    <string name="ic_books">Books</string>
+    <string name="ic_tools">Tools</string>
+    <string name="qr_code">QR code</string>
+    <string name="hint_search">Search</string>
+    <string name="hot_sales_banner">Hot sales banner</string>
+    <string name="hot_sales_new">New</string>
+    <string name="buy_now">Buy now!</string>
 </resources>

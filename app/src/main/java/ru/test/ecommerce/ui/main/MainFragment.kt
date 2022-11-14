@@ -1,21 +1,22 @@
 package ru.test.ecommerce.ui.main
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import ru.test.ecommerce.adapter.CompositeAdapter
-import ru.test.ecommerce.adapter.DelegateAdapterItem
+import ru.test.ecommerce.R
+import ru.test.ecommerce.adapter.*
+import ru.test.ecommerce.bestseller.BestSellerVerticalItem
+import ru.test.ecommerce.category.CategoriesHorizontalItem
+import ru.test.ecommerce.category.CategoryItem
 import ru.test.ecommerce.databinding.FragmentMainBinding
-import ru.test.ecommerce.model.AuthAdapter
-import ru.test.ecommerce.model.AuthAdapterModel
+import ru.test.ecommerce.hotsales.HotSaleItem
+import ru.test.ecommerce.hotsales.HotSalesHorizontalItem
 
-class MainFragment : Fragment() {
-
-    private var _binding: FragmentMainBinding? = null
-    private val binding get() = _binding!!
+class MainFragment : Fragment(R.layout.fragment_main) {
+    private val binding by viewBinding { FragmentMainBinding.bind(it) }
+    private val adapter = CategoriesAdapter()
 
     private lateinit var viewModel: MainViewModel
 
@@ -24,30 +25,25 @@ class MainFragment : Fragment() {
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val data = mutableListOf<DelegateAdapterItem>()
-        for (i in 0..10) {
-            data.add(AuthAdapterModel(i.toString()))
+        binding.mainRecycler.adapter = adapter
+        adapter.apply {
+            items = listOf(
+                CategoriesHorizontalItem(),
+                HotSalesHorizontalItem(
+                    title = "Hot sales",
+                    endTitle = "see more",
+                    categories = IntRange(1, 4).map { HotSaleItem("Item $it") }
+                ),
+                BestSellerVerticalItem(
+                    title = "Best sales",
+                    categories = IntRange(1, 20).map {
+                        CategoryItem(R.string.ic_phones, R.drawable.ic_phones)
+                    }
+                ),
+            )
         }
-        val compositeAdapter = CompositeAdapter.Builder()
-            .add(AuthAdapter {})
-            .add(AuthAdapter {})
-            .build()
-        binding.recyclerCategory.adapter = compositeAdapter
-        compositeAdapter.submitList(data)
-    }
-
-    override fun onDestroy() {
-        _binding = null
-        super.onDestroy()
     }
 
     companion object {

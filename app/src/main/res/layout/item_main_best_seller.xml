@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <FrameLayout
@@ -12,28 +12,31 @@
         android:layout_marginHorizontal="16dp">
 
         <TextView
+            android:id="@+id/startField"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_gravity="start"
-            android:text="SELECT CATEGORY"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            tools:text="SELECT CATEGORY" />
 
         <TextView
+            android:id="@+id/endField"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="view all"
             android:textColor="?attr/colorSecondary"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            tools:text="view all" />
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerCategory"
+        android:id="@+id/recyclerBestSeller"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="12dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
         tools:listitem="@layout/item_recycle_category" />
 </androidx.appcompat.widget.LinearLayoutCompat>
