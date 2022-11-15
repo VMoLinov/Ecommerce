@@ -21,7 +21,7 @@
 
         <Button
             android:id="@+id/buttonApply"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.NoInsets"
+            style="@style/Button.NoInsets"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="end"

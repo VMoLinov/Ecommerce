@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.ArrayAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import ru.test.ecommerce.R
-import ru.test.ecommerce.adapter.viewBinding
+import ru.test.ecommerce.mainadapter.viewBinding
 import ru.test.ecommerce.databinding.BottomSheetBinding
 
 class BottomSheet : BottomSheetDialogFragment(R.layout.bottom_sheet) {

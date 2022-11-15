@@ -1,9 +1,9 @@
 package ru.test.ecommerce.hotsales
 
-import ru.test.ecommerce.adapter.ListItem
+import ru.test.ecommerce.mainadapter.MainListItem
 
-data class HotSaleItem(
+data class HotSaleItemMain(
     val name: String
-) : ListItem {
+) : MainListItem {
     override val itemId = name.hashCode().toLong()
 }

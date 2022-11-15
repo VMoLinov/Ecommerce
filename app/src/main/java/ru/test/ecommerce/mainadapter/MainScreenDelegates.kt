@@ -1,4 +1,4 @@
-package ru.test.ecommerce.adapter
+package ru.test.ecommerce.mainadapter
 
 import android.graphics.Paint
 import androidx.core.view.isVisible
@@ -7,23 +7,23 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
-import ru.test.ecommerce.bestseller.BestSellerItem
-import ru.test.ecommerce.bestseller.BestSellerVerticalItem
-import ru.test.ecommerce.category.CategoriesHorizontalItem
-import ru.test.ecommerce.category.CategoryItem
+import ru.test.ecommerce.bestseller.BestSellerItemMain
+import ru.test.ecommerce.bestseller.BestSellerVerticalItemMain
+import ru.test.ecommerce.category.CategoriesHorizontalItemMain
+import ru.test.ecommerce.category.CategoryItemMain
 import ru.test.ecommerce.databinding.*
-import ru.test.ecommerce.hotsales.HotSaleItem
-import ru.test.ecommerce.hotsales.HotSalesHorizontalItem
+import ru.test.ecommerce.hotsales.HotSaleItemMain
+import ru.test.ecommerce.hotsales.HotSalesHorizontalItemMain
 
 object MainScreenDelegates {
 
     fun horizontalCategoriesBlock() =
-        adapterDelegateViewBinding<CategoriesHorizontalItem, ListItem, ItemMainCategoriesBinding>(
+        adapterDelegateViewBinding<CategoriesHorizontalItemMain, MainListItem, ItemMainCategoriesBinding>(
             { inflater, container ->
                 ItemMainCategoriesBinding.inflate(inflater, container, false)
             }) {
             var activeItem = 0
-            var adapter: ListDelegationAdapter<List<ListItem>>? = null
+            var adapter: ListDelegationAdapter<List<MainListItem>>? = null
             fun notifyAdapter(activeItem: Int, onCLickItem: Int) {
                 adapter?.let {
                     it.notifyItemChanged(activeItem)
@@ -46,7 +46,7 @@ object MainScreenDelegates {
         }
 
     private fun horizontalCategoriesItems(onClick: (Int) -> Unit) =
-        adapterDelegateViewBinding<CategoryItem, ListItem, ItemRecycleCategoryBinding>(
+        adapterDelegateViewBinding<CategoryItemMain, MainListItem, ItemRecycleCategoryBinding>(
             { inflater, container ->
                 ItemRecycleCategoryBinding.inflate(inflater, container, false)
             }) {
@@ -63,7 +63,7 @@ object MainScreenDelegates {
         }
 
     fun horizontalHotSalesBlock() =
-        adapterDelegateViewBinding<HotSalesHorizontalItem, ListItem, ItemMainHotSalesBinding>(
+        adapterDelegateViewBinding<HotSalesHorizontalItemMain, MainListItem, ItemMainHotSalesBinding>(
             { inflater, container -> ItemMainHotSalesBinding.inflate(inflater, container, false) }
         ) {
             binding.recyclerHotSales.layoutManager = ProminentLayoutManager(binding.root.context)
@@ -78,7 +78,7 @@ object MainScreenDelegates {
         }
 
     private fun horizontalHotSalesItems() =
-        adapterDelegateViewBinding<HotSaleItem, ListItem, ItemRecycleHotSalesBinding>(
+        adapterDelegateViewBinding<HotSaleItemMain, MainListItem, ItemRecycleHotSalesBinding>(
             { inflater, container ->
                 ItemRecycleHotSalesBinding.inflate(inflater, container, false)
             }) {
@@ -91,7 +91,7 @@ object MainScreenDelegates {
         }
 
     fun gridBestSellerBlock() =
-        adapterDelegateViewBinding<BestSellerVerticalItem, ListItem, ItemMainBestSellerBinding>(
+        adapterDelegateViewBinding<BestSellerVerticalItemMain, MainListItem, ItemMainBestSellerBinding>(
             { inflater, container ->
                 ItemMainBestSellerBinding.inflate(inflater, container, false)
             }) {
@@ -105,7 +105,7 @@ object MainScreenDelegates {
         }
 
     private fun gridBestSellerItems() =
-        adapterDelegateViewBinding<BestSellerItem, ListItem, ItemRecycleBestSellerBinding>(
+        adapterDelegateViewBinding<BestSellerItemMain, MainListItem, ItemRecycleBestSellerBinding>(
             { inflater, container ->
                 ItemRecycleBestSellerBinding.inflate(inflater, container, false)
             }) {

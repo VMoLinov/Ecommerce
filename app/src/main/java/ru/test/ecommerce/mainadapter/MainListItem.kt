@@ -1,6 +1,6 @@
-package ru.test.ecommerce.adapter
+package ru.test.ecommerce.mainadapter
 
-interface ListItem {
+interface MainListItem {
     val itemId: Long
 
     override fun equals(other: Any?): Boolean

@@ -1,10 +1,9 @@
-package ru.test.ecommerce.adapter
-
+package ru.test.ecommerce.mainadapter
 
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 
-class CategoriesAdapter(
-) : AsyncListDifferDelegationAdapter<ListItem>(BaseDiffUtilItemCallback()) {
+class MainListAdapter(
+) : AsyncListDifferDelegationAdapter<MainListItem>(MainDiffUtilItemCallback()) {
 
     init {
         delegatesManager

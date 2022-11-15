@@ -1,4 +1,4 @@
-package ru.test.ecommerce.adapter
+package ru.test.ecommerce.mainadapter
 
 import android.content.Context
 import androidx.recyclerview.widget.LinearLayoutManager

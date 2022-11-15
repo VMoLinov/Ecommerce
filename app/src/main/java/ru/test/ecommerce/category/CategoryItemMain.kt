@@ -1,11 +1,11 @@
 package ru.test.ecommerce.category
 
-import ru.test.ecommerce.adapter.ListItem
+import ru.test.ecommerce.mainadapter.MainListItem
 
-data class CategoryItem(
+data class CategoryItemMain(
     val name: Int,
     val icon: Int,
     var isActive: Boolean = false
-) : ListItem {
+) : MainListItem {
     override val itemId = name.hashCode().toLong()
 }
