@@ -23,7 +23,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginHorizontal="24dp"
-        android:background="@drawable/shape_qr_category"
+        android:background="@drawable/shape_secondary_circle"
         app:layout_constraintBottom_toTopOf="@id/centralBlock"
         app:layout_constraintStart_toStartOf="@id/image"
         app:layout_constraintTop_toTopOf="@id/image"
@@ -41,6 +41,7 @@
         android:id="@+id/centralBlock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/buyButton"
         app:layout_constraintStart_toStartOf="@id/image"
@@ -50,7 +51,6 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
             android:textSize="25sp"
             android:textStyle="bold"
             tools:text="Iphone 12" />
@@ -59,7 +59,6 @@
             android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
             android:textSize="11sp"
             tools:text="Súper. Mega. Rápido." />
     </androidx.appcompat.widget.LinearLayoutCompat>

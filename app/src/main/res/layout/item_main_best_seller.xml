@@ -6,28 +6,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp">
-
-        <TextView
-            android:id="@+id/startField"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_gravity="start"
-            android:textSize="25sp"
-            tools:text="SELECT CATEGORY" />
-
-        <TextView
-            android:id="@+id/endField"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:textColor="?attr/colorSecondary"
-            android:textSize="15sp"
-            tools:text="view all" />
-    </FrameLayout>
+    <include
+        android:id="@+id/header"
+        layout="@layout/items_main_headers" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerBestSeller"
@@ -38,5 +19,5 @@
         android:padding="12dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
-        tools:listitem="@layout/item_recycle_category" />
+        tools:listitem="@layout/item_recycle_best_seller" />
 </androidx.appcompat.widget.LinearLayoutCompat>

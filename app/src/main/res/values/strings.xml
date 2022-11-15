@@ -13,4 +13,11 @@
     <string name="hot_sales_banner">Hot sales banner</string>
     <string name="hot_sales_new">New</string>
     <string name="buy_now">Buy now!</string>
+    <string name="like_button">Like button</string>
+    <string name="location_icon">Location icon</string>
+    <string name="location_chooser">Location chooser</string>
+    <string name="filter">Filter</string>
+    <string name="cancel">Cancel</string>
+    <string name="cart">Cart</string>
+    <string name="product_photo">Product photo</string>
 </resources>

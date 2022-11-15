@@ -10,7 +10,7 @@ class CategoriesAdapter(
         delegatesManager
             .addDelegate(MainScreenDelegates.horizontalCategoriesBlock())
             .addDelegate(MainScreenDelegates.horizontalHotSalesBlock())
-            .addDelegate(MainScreenDelegates.verticalBestSellersBlock())
+            .addDelegate(MainScreenDelegates.gridBestSellerBlock())
 //            .addDelegate(MainScreenDelegates.wideProgressDelegate())
 //            .addDelegate(MainScreenDelegates.thinProgressDelegate())
 //            .addDelegate(MainScreenDelegates.wideErrorDelegate(onRefreshClick))

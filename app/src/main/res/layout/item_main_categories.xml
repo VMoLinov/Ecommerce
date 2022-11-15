@@ -19,7 +19,7 @@
         android:orientation="horizontal"
         android:padding="12dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_recycle_category_horizontal" />
+        tools:listitem="@layout/item_recycle_category" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -43,7 +43,7 @@
         <FrameLayout
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:background="@drawable/shape_qr_category">
+            android:background="@drawable/shape_secondary_circle">
 
             <ImageView
                 android:layout_width="15dp"

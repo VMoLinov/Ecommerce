@@ -1,10 +1,13 @@
 package ru.test.ecommerce.adapter
 
+import android.graphics.Paint
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
+import ru.test.ecommerce.bestseller.BestSellerItem
 import ru.test.ecommerce.bestseller.BestSellerVerticalItem
 import ru.test.ecommerce.category.CategoriesHorizontalItem
 import ru.test.ecommerce.category.CategoryItem
@@ -43,40 +46,18 @@ object MainScreenDelegates {
         }
 
     private fun horizontalCategoriesItems(onClick: (Int) -> Unit) =
-        adapterDelegateViewBinding<CategoryItem, ListItem, ItemRecycleCategoryHorizontalBinding>(
-            { inflater, container ->
-                ItemRecycleCategoryHorizontalBinding.inflate(inflater, container, false)
-            }) {
-            bind {
-                binding.icon.isActivated = item.isActive
-                binding.container.isActivated = item.isActive
-                binding.container.setOnClickListener {
-                    onClick(absoluteAdapterPosition)
-                }
-                binding.icon.setImageDrawable(getDrawable(item.icon))
-                binding.name.text = getString(item.name)
-            }
-        }
-
-    fun verticalBestSellersBlock() =
-        adapterDelegateViewBinding<BestSellerVerticalItem, ListItem, ItemMainBestSellerBinding>(
-            { inflater, container ->
-                ItemMainBestSellerBinding.inflate(inflater, container, false)
-            }) {
-            val adapter = ListDelegationAdapter(verticalBestSellersItems())
-            binding.recyclerBestSeller.adapter = adapter
-            bind {
-                binding.startField.text = item.title
-                adapter.items = item.categories
-            }
-        }
-
-    private fun verticalBestSellersItems() =
         adapterDelegateViewBinding<CategoryItem, ListItem, ItemRecycleCategoryBinding>(
             { inflater, container ->
                 ItemRecycleCategoryBinding.inflate(inflater, container, false)
             }) {
             bind {
+                binding.icon.isActivated = item.isActive
+                binding.container.isActivated = item.isActive
+                binding.name.isActivated = item.isActive
+                binding.container.setOnClickListener {
+                    onClick(absoluteAdapterPosition)
+                }
+                binding.icon.setImageDrawable(getDrawable(item.icon))
                 binding.name.text = getString(item.name)
             }
         }
@@ -106,6 +87,37 @@ object MainScreenDelegates {
                     .load("https://static.digit.in/default/942998b8b4d3554a6259aeb1a0124384dbe0d4d5.jpeg")
                     .transform(RoundedCorners(40))
                     .into(binding.image)
+            }
+        }
+
+    fun gridBestSellerBlock() =
+        adapterDelegateViewBinding<BestSellerVerticalItem, ListItem, ItemMainBestSellerBinding>(
+            { inflater, container ->
+                ItemMainBestSellerBinding.inflate(inflater, container, false)
+            }) {
+            val adapter = ListDelegationAdapter(gridBestSellerItems())
+            binding.recyclerBestSeller.adapter = adapter
+            bind {
+                binding.header.startField.text = item.title
+                binding.header.endField.text = item.endTitle
+                adapter.items = item.categories
+            }
+        }
+
+    private fun gridBestSellerItems() =
+        adapterDelegateViewBinding<BestSellerItem, ListItem, ItemRecycleBestSellerBinding>(
+            { inflater, container ->
+                ItemRecycleBestSellerBinding.inflate(inflater, container, false)
+            }) {
+            bind {
+                binding.likeFill.isVisible = item.isFavorites
+                binding.name.text = item.title
+                binding.price.text = item.price
+                binding.oldPrice.text = item.oldPrice
+                binding.oldPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+                binding.likeButton.setOnClickListener {
+                    binding.likeFill.isVisible = !binding.likeFill.isVisible
+                }
             }
         }
 }

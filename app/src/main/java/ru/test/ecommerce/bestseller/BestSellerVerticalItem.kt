@@ -4,7 +4,8 @@ import ru.test.ecommerce.adapter.ListItem
 
 data class BestSellerVerticalItem(
     val title: String,
-    val categories: List<ListItem>
+    val endTitle: String,
+    val categories: List<BestSellerItem>
 ) : ListItem {
     override val itemId = title.hashCode().toLong()
 }

@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:gravity="center"
-    android:layout_margin="12dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <FrameLayout
+        android:id="@+id/container"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:background="@drawable/shape_recycler_category_active">
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/selector_recycler_category"
+        android:elevation="10dp"
+        tools:background="@drawable/shape_recycler_category_active">
 
         <ImageView
+            android:id="@+id/icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -24,7 +29,7 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        tools:text="Phones"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="@color/selector_recycler_category_text"
+        tools:text="Phones" />
 </androidx.appcompat.widget.LinearLayoutCompat>
