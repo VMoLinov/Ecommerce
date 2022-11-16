@@ -17,7 +17,6 @@ import ru.test.ecommerce.bestseller.BestSellerVerticalItemMain
 import ru.test.ecommerce.category.CategoriesHorizontalItemMain
 import ru.test.ecommerce.databinding.FragmentMainBinding
 import ru.test.ecommerce.hotsales.HotSalesHorizontalItemMain
-import ru.test.ecommerce.mainadapter.MainListAdapter
 import ru.test.ecommerce.mainadapter.MainListItem
 import ru.test.ecommerce.mainadapter.viewBinding
 

@@ -1,12 +1,8 @@
 package ru.test.ecommerce
 
 import android.os.Bundle
-import android.view.View
-import android.view.ViewTreeObserver
-import android.window.SplashScreen
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import ru.test.ecommerce.ui.main.DetailsFragment
 import ru.test.ecommerce.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {

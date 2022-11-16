@@ -1,7 +1,10 @@
-package ru.test.ecommerce.mainadapter
+package ru.test.ecommerce.ui.main
 
 import com.bumptech.glide.RequestManager
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
+import ru.test.ecommerce.mainadapter.MainDiffUtilItemCallback
+import ru.test.ecommerce.mainadapter.MainListItem
+import ru.test.ecommerce.mainadapter.MainScreenDelegates
 
 class MainListAdapter(
     val glide: RequestManager,
