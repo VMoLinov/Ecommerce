@@ -4,27 +4,28 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
-import ru.test.ecommerce.repository.NetworkSource
-import ru.test.ecommerce.repository.NetworkSourceImpl
-import ru.test.ecommerce.repository.model.ResultDTO
+import ru.test.ecommerce.interactor.Interactor
+import ru.test.ecommerce.ui.main.adapter.MainListItem
+import ru.test.ecommerce.utils.Filter
+import ru.test.ecommerce.utils.NoFilter
 
-class MainViewModel(private val repository: NetworkSource = NetworkSourceImpl()) : ViewModel() {
+class MainViewModel(private val interactor: Interactor) : ViewModel() {
 
-    private val filter = MutableStateFlow(NoFilter)
-    val data = MutableStateFlow(ResultDTO(emptyList(), emptyList()))
+    private val category = MutableStateFlow(NoFilter)
+    private val filter = MutableStateFlow(Pair(0, 0))
+    val data = MutableStateFlow<List<MainListItem>>(listOf())
 
     init {
         viewModelScope.launch {
-            repository.getMainList().collect { data.value = it }
+            interactor.getMainListData().collect { data.value = it }
         }
     }
 
     fun filterCategory(name: String) {
-        viewModelScope.launch { filter.emit(Filter(name)) }
+        viewModelScope.launch { category.emit(Filter(name)) }
+    }
+
+    fun filterBottom(pair: Pair<Int, Int>) {
+        viewModelScope.launch { filter.emit(pair) }
     }
 }
-
-@JvmInline
-value class Filter(val string: String)
-
-val NoFilter = Filter("")

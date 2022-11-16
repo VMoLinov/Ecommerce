@@ -4,13 +4,19 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import androidx.appcompat.R.layout.support_simple_spinner_dropdown_item
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import ru.test.ecommerce.R
 import ru.test.ecommerce.databinding.BottomSheetBinding
-import ru.test.ecommerce.mainadapter.viewBinding
+import ru.test.ecommerce.utils.getAppComponent
+import ru.test.ecommerce.utils.viewBinding
 
 class BottomSheet : BottomSheetDialogFragment(R.layout.bottom_sheet) {
+
     private val binding: BottomSheetBinding by viewBinding { BottomSheetBinding.bind(it) }
+    private val viewModel by lazy {
+        ViewModelProvider(this, getAppComponent().viewModel())[BottomSheetViewModel::class.java]
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

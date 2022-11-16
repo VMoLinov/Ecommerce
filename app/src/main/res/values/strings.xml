@@ -32,4 +32,16 @@
     <string name="best_seller">Best Seller</string>
     <string name="see_more">see more</string>
     <string name="hot_sales">Hot Sales</string>
+    <string-array name="brands">
+        <item>All</item>
+        <item>Samsung</item>
+        <item>Apple</item>
+        <item>Xiaomi</item>
+    </string-array>
+    <string-array name="prices">
+        <item>$0-$100</item>
+        <item>$100-$300</item>
+        <item>$300-$500</item>
+        <item>$500-$2000</item>
+    </string-array>
 </resources>
