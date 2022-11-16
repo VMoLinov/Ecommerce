@@ -14,14 +14,14 @@ import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import ru.test.ecommerce.databinding.ItemRecycleSpecColorBinding
 import ru.test.ecommerce.databinding.ItemRecycleSpecMemoryBinding
-import ru.test.ecommerce.databinding.ItemRecyclerImagesBinding
+import ru.test.ecommerce.databinding.ItemRecycleImagesBinding
 
 object DetailsScreenDelegates {
 
     fun productImagesDelegate() =
-        adapterDelegateViewBinding<ImageItem, DetailsListItem, ItemRecyclerImagesBinding>(
+        adapterDelegateViewBinding<ImageItem, DetailsListItem, ItemRecycleImagesBinding>(
             { inflater, container ->
-                ItemRecyclerImagesBinding.inflate(inflater, container, false)
+                ItemRecycleImagesBinding.inflate(inflater, container, false)
             }) {
 
             bind {
@@ -38,10 +38,13 @@ object DetailsScreenDelegates {
                 ItemRecycleSpecColorBinding.inflate(inflater, container, false)
             }) {
             colorsList.add(binding.isSelect)
-            colorsList.first().isVisible = true
+            colorsList[0].isVisible = true
             binding.root.setOnClickListener {
-                colorsList.forEach { it.isVisible = false }
-                binding.isSelect.isVisible = true
+                if (absoluteAdapterPosition != colorSelected) {
+                    colorsList[colorSelected].isVisible = false
+                    colorSelected = absoluteAdapterPosition
+                    colorsList[colorSelected].isVisible = true
+                }
             }
             bind {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -55,6 +58,7 @@ object DetailsScreenDelegates {
             }
         }
 
+    private var colorSelected = 0
     private val colorsList = mutableListOf<ImageView>()
 
     fun specMemoryDelegate() =
@@ -64,19 +68,26 @@ object DetailsScreenDelegates {
             }) {
             memoryListShape.add(binding.shape)
             memoryListText.add(binding.title)
-            memoryListShape.first().isActivated = true
-            memoryListText.first().isActivated = true
+            changeActivated(0, true)
             binding.root.setOnClickListener {
-                memoryListShape.forEach { it.isActivated = false }
-                memoryListText.forEach { it.isActivated = false }
-                binding.title.isActivated = true
-                binding.shape.isActivated = true
+                val realPosition = absoluteAdapterPosition - colorsList.size
+                if (memorySelected != realPosition) {
+                    changeActivated(memorySelected, false)
+                    memorySelected = realPosition
+                    changeActivated(memorySelected, true)
+                }
             }
             bind {
                 binding.title.text = item.size
             }
         }
 
+    private fun changeActivated(position: Int, visibility: Boolean) {
+        memoryListShape[position].isActivated = visibility
+        memoryListText[position].isActivated = visibility
+    }
+
+    private var memorySelected = 0
     private val memoryListShape = mutableListOf<FrameLayout>()
     private val memoryListText = mutableListOf<TextView>()
 }

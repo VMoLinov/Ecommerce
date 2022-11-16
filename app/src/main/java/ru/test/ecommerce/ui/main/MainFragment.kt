@@ -2,8 +2,8 @@ package ru.test.ecommerce.ui.main
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentResultListener
 import androidx.lifecycle.ViewModelProvider
 import ru.test.ecommerce.R
 import ru.test.ecommerce.bestseller.BestSellerItemMain
@@ -30,16 +30,20 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
         binding.mainRecycler.adapter = adapter
         binding.mainHeader.filter.setOnClickListener {
-            parentFragmentManager.setFragmentResultListener(
-                "requestKey",
-                this
-            ) { requestKey, bundle ->
-                val result = bundle.getString(requestKey)
-                Toast.makeText(context, "Result", Toast.LENGTH_SHORT).show()
-            }
             BottomSheet().show(requireActivity().supportFragmentManager, "TAG")
         }
+        binding.nav.bottomNavigationView.getOrCreateBadge(R.id.menuCart).apply {
+            number = 1
+            isVisible = true
+        }
         initAdapter()
+    }
+
+    private val resultListener = FragmentResultListener { requestKey, result ->
+        when (requestKey) {
+//            ...
+        }
+        TODO("Not yet implemented")
     }
 
     private fun initAdapter() {

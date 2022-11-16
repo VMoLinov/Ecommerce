@@ -48,7 +48,7 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@id/bottom"
         app:layout_constraintTop_toBottomOf="@id/header"
-        tools:listitem="@layout/item_recycler_images" />
+        tools:listitem="@layout/item_recycle_images" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/bottom"
