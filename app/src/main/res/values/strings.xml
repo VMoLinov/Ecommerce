@@ -24,7 +24,7 @@
     <string name="apply_icon">Apply icon</string>
     <string name="add_to_cart">Add to cart</string>
     <string name="my_cart">My cart</string>
-    <string name="add_adress">Add adress</string>
+    <string name="add_adress">Add address</string>
     <string name="item_photo">Item photo</string>
     <string name="clear_position">Clear position</string>
     <string name="minus_quantity">Minus quantity</string>
@@ -32,6 +32,11 @@
     <string name="best_seller">Best Seller</string>
     <string name="see_more">see more</string>
     <string name="hot_sales">Hot Sales</string>
+    <string name="bottom_filter_done">Done</string>
+    <string name="bottom_filter_options">Filter options</string>
+    <string name="bottom_filter_brand">Brand</string>
+    <string name="bottom_filter_price">Price</string>
+    <string name="bottom_filter_size">Size</string>
     <string-array name="brands">
         <item>All</item>
         <item>Samsung</item>
@@ -39,9 +44,12 @@
         <item>Xiaomi</item>
     </string-array>
     <string-array name="prices">
-        <item>$0-$100</item>
-        <item>$100-$300</item>
-        <item>$300-$500</item>
-        <item>$500-$2000</item>
+        <item>$0 - $100</item>
+        <item>$100 - $300</item>
+        <item>$300 - $500</item>
+        <item>$500 - $2000</item>
+    </string-array>
+    <string-array name="sizes">
+        <item>4.5 to 5.5 inches</item>
     </string-array>
 </resources>

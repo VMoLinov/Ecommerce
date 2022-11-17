@@ -6,10 +6,10 @@ import ru.test.ecommerce.interactor.network.model.ResultDTO
 import javax.inject.Inject
 
 class NetworkSourceImpl @Inject constructor(
-    private val api: Api
+    private val apiHolder: ApiHolder
 ) : NetworkSource {
 
     override suspend fun getMainList(): Flow<ResultDTO> {
-        return flow { emit(api.getMainList()) }
+        return flow { emit(apiHolder.getMainList()) }
     }
 }

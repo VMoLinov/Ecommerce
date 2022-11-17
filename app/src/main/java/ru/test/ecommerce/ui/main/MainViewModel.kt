@@ -12,7 +12,7 @@ import ru.test.ecommerce.utils.NoFilter
 class MainViewModel(private val interactor: Interactor) : ViewModel() {
 
     private val category = MutableStateFlow(NoFilter)
-    private val filter = MutableStateFlow(Pair(0, 0))
+    private val filter = MutableStateFlow(intArrayOf())
     val data = MutableStateFlow<List<MainListItem>>(listOf())
 
     init {
@@ -25,7 +25,7 @@ class MainViewModel(private val interactor: Interactor) : ViewModel() {
         viewModelScope.launch { category.emit(Filter(name)) }
     }
 
-    fun filterBottom(pair: Pair<Int, Int>) {
-        viewModelScope.launch { filter.emit(pair) }
+    fun filterBottom(array: IntArray) {
+        viewModelScope.launch { filter.emit(array) }
     }
 }

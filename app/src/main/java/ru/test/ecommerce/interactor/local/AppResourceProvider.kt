@@ -1,6 +1,7 @@
 package ru.test.ecommerce.interactor.local
 
 import android.content.Context
+import ru.test.ecommerce.R
 import ru.test.ecommerce.interactor.local.model.BestSeller
 import ru.test.ecommerce.interactor.local.model.HomeStore
 import ru.test.ecommerce.ui.main.adapter.MainListItem
@@ -14,6 +15,7 @@ class AppResourceProvider @Inject constructor(
 ) : ResourceProvider {
 
     override fun string(id: Int): String = context.resources.getString(id)
+    private fun stringArray(id: Int): List<String> = context.resources.getStringArray(id).toList()
 
     override fun wrapDataWithConstants(
         homeStores: List<HomeStore>,
@@ -25,4 +27,10 @@ class AppResourceProvider @Inject constructor(
             BestSellerVerticalItemMain(bestSellers)
         )
     }
+
+    override fun getBrands(): List<String> = stringArray(R.array.brands)
+
+    override fun getPrices(): List<String> = stringArray(R.array.prices)
+
+    override fun getSizes(): List<String> = stringArray(R.array.sizes)
 }

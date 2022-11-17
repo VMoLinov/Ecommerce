@@ -26,4 +26,10 @@ class InteractorImpl @Inject constructor(
             )
         }
     }
+
+    override suspend fun getBrands(): List<String> = local.getBrands()
+
+    override suspend fun getPrices(): List<String> = local.getPrices()
+
+    override suspend fun getSizes(): List<String> = local.getSizes()
 }

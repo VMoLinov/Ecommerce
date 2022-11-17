@@ -3,19 +3,16 @@ package ru.test.ecommerce.ui.main
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentResultListener
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import kotlinx.coroutines.flow.Flow
 import ru.test.ecommerce.R
 import ru.test.ecommerce.databinding.FragmentMainBinding
 import ru.test.ecommerce.ui.main.adapter.MainListAdapter
 import ru.test.ecommerce.utils.getAppComponent
-import ru.test.ecommerce.utils.launchAndRepeatOnStart
 import ru.test.ecommerce.utils.viewBinding
 
-class MainFragment : Fragment(R.layout.fragment_main) {
+class MainFragment : BaseFragment(R.layout.fragment_main) {
 
     private val binding by viewBinding { FragmentMainBinding.bind(it) }
     private val viewModel by lazy {
@@ -55,21 +52,14 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private val resultListener = FragmentResultListener { requestKey, result ->
         when (requestKey) {
             REQUEST_FILTER -> {
-                viewModel.filterBottom(Pair(result.getInt(BRAND), result.getInt(PRICE)))
+                viewModel.filterBottom(result.getIntArray(FILTER_POSITIONS) ?: intArrayOf())
             }
-        }
-    }
-
-    fun <T> Flow<T>.collectWhileStarted(block: (T) -> Unit) {
-        launchAndRepeatOnStart {
-            collect { block.invoke(it) }
         }
     }
 
     companion object {
         const val REQUEST_FILTER = "filter"
-        const val BRAND = "brand"
-        const val PRICE = "price"
+        const val FILTER_POSITIONS = "filter positions"
         fun newInstance() = MainFragment()
     }
 }

@@ -9,7 +9,7 @@ import ru.test.ecommerce.interactor.Interactor
 import ru.test.ecommerce.interactor.InteractorImpl
 import ru.test.ecommerce.interactor.local.AppResourceProvider
 import ru.test.ecommerce.interactor.local.ResourceProvider
-import ru.test.ecommerce.interactor.network.Api
+import ru.test.ecommerce.interactor.network.ApiHolder
 import ru.test.ecommerce.interactor.network.NetworkSource
 import ru.test.ecommerce.interactor.network.NetworkSourceImpl
 
@@ -30,7 +30,7 @@ class MainModule {
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(Api::class.java)
+                .create(ApiHolder::class.java)
         )
     }
 

@@ -13,4 +13,10 @@ interface ResourceProvider {
         homeStores: List<HomeStore>,
         bestSellers: List<BestSeller>
     ): List<MainListItem>
+
+    fun getBrands(): List<String>
+
+    fun getPrices(): List<String>
+
+    fun getSizes(): List<String>
 }
