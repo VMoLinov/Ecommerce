@@ -3,10 +3,13 @@ package ru.test.ecommerce.interactor
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
 import ru.test.ecommerce.interactor.local.ResourceProvider
 import ru.test.ecommerce.interactor.network.NetworkSource
+import ru.test.ecommerce.ui.details.DeviceDetails
 import ru.test.ecommerce.ui.main.adapter.MainListItem
 import ru.test.ecommerce.utils.toBestSeller
+import ru.test.ecommerce.utils.toDeviceDetails
 import ru.test.ecommerce.utils.toHomeStore
 import javax.inject.Inject
 
@@ -26,6 +29,8 @@ class InteractorImpl @Inject constructor(
             )
         }
     }
+
+    override suspend fun getDeviceDetails(): Flow<DeviceDetails> = network.getDeviceDetails().map { it.toDeviceDetails() }
 
     override suspend fun getBrands(): List<String> = local.getBrands()
 

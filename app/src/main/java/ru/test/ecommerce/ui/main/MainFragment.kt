@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import ru.test.ecommerce.R
 import ru.test.ecommerce.databinding.FragmentMainBinding
+import ru.test.ecommerce.ui.details.DetailsFragment
 import ru.test.ecommerce.ui.main.adapter.MainListAdapter
 import ru.test.ecommerce.utils.getAppComponent
 import ru.test.ecommerce.utils.viewBinding
@@ -28,7 +29,11 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
     }
 
     private fun onBestSellerClick(id: Long) {
-
+        parentFragmentManager
+            .beginTransaction()
+            .replace(R.id.container, DetailsFragment.newInstance(id))
+            .addToBackStack(null)
+            .commit()
     }
 
     private fun hotSalesToast(id: Long) {
@@ -41,12 +46,9 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         binding.mainHeader.filter.setOnClickListener {
             BottomSheet().show(requireActivity().supportFragmentManager, "TAG")
         }
-        binding.nav.bottomNavigationView.getOrCreateBadge(R.id.menuCart).apply {
-            number = 1
-            isVisible = true
-        }
         viewModel.data.collectWhileStarted { adapter.items = it }
         parentFragmentManager.setFragmentResultListener(REQUEST_FILTER, this, resultListener)
+        parentFragmentManager.setFragmentResultListener(ADD_TO_CART, this, resultListener)
     }
 
     private val resultListener = FragmentResultListener { requestKey, result ->
@@ -54,10 +56,17 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
             REQUEST_FILTER -> {
                 viewModel.filterBottom(result.getIntArray(FILTER_POSITIONS) ?: intArrayOf())
             }
+            ADD_TO_CART -> {
+                binding.nav.bottomNavigationView.getOrCreateBadge(R.id.menuCart).apply {
+                    number++
+                    isVisible = true
+                }
+            }
         }
     }
 
     companion object {
+        const val ADD_TO_CART = "cart"
         const val REQUEST_FILTER = "filter"
         const val FILTER_POSITIONS = "filter positions"
         fun newInstance() = MainFragment()
