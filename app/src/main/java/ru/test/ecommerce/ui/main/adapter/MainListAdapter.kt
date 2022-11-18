@@ -6,14 +6,15 @@ import ru.test.ecommerce.utils.MainDiffUtilItemCallback
 
 class MainListAdapter(
     val glide: RequestManager,
-    val onCategoryClick: (name: String) -> Unit,
+    val reselectCategory: (id: Long) -> Unit,
     val onHotSalesClick: (id: Long) -> Unit,
     val onBestSellerClick: (id: Long) -> Unit
 ) : AsyncListDifferDelegationAdapter<MainListItem>(MainDiffUtilItemCallback()) {
 
+
     init {
         delegatesManager
-            .addDelegate(MainScreenDelegates.horizontalCategoriesBlock(onCategoryClick))
+            .addDelegate(MainScreenDelegates.horizontalCategoriesBlock(reselectCategory))
             .addDelegate(MainScreenDelegates.horizontalHotSalesBlock(glide, onHotSalesClick))
             .addDelegate(MainScreenDelegates.gridBestSellerBlock(glide, onBestSellerClick))
     }

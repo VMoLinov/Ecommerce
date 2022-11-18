@@ -1,6 +1,7 @@
 package ru.test.ecommerce.interactor.network
 
 import retrofit2.http.GET
+import ru.test.ecommerce.interactor.network.model.CartDTO
 import ru.test.ecommerce.interactor.network.model.DeviceDetailsDTO
 import ru.test.ecommerce.interactor.network.model.ResultDTO
 
@@ -11,4 +12,7 @@ interface ApiHolder {
 
     @GET("6c14c560-15c6-4248-b9d2-b4508df7d4f5")
     suspend fun getDeviceDetails(): DeviceDetailsDTO
+
+    @GET("53539a72-3c5f-4f30-bbb1-6ca10d42c149")
+    suspend fun getCartDetails(): CartDTO
 }

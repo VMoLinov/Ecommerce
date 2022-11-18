@@ -2,7 +2,6 @@ package ru.test.ecommerce.ui.main.adapter.items
 
 import ru.test.ecommerce.R
 import ru.test.ecommerce.interactor.local.model.HomeStore
-import ru.test.ecommerce.interactor.network.model.HomeStoreDTO
 import ru.test.ecommerce.ui.main.adapter.MainListItem
 
 data class HotSalesHorizontalItemMain(

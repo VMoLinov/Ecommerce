@@ -21,8 +21,8 @@ class MainViewModel(private val interactor: Interactor) : ViewModel() {
         }
     }
 
-    fun filterCategory(name: String) {
-        viewModelScope.launch { category.emit(Filter(name)) }
+    fun filterCategory(id: Long) {
+        viewModelScope.launch { category.emit(Filter("$id")) }
     }
 
     fun filterBottom(array: IntArray) {

@@ -20,39 +20,38 @@ import ru.test.ecommerce.utils.ProminentLayoutManager
 
 object MainScreenDelegates {
 
-    fun horizontalCategoriesBlock(onCategoryClick: (name: String) -> Unit) =
+    private var activeCategoryPosition = 0
+
+    fun horizontalCategoriesBlock(onCategoryClick: (position: Long) -> Unit) =
         adapterDelegateViewBinding<CategoriesHorizontalItemMain, MainListItem, ItemMainCategoriesBinding>(
             { inflater, container ->
                 ItemMainCategoriesBinding.inflate(inflater, container, false)
             }) {
-            var activeItem = 0
             var adapter: ListDelegationAdapter<List<MainListItem>>? = null
-            fun notifyAdapter(activeItem: Int, onCLickItem: Int) {
-                adapter?.let {
-                    it.notifyItemChanged(activeItem)
-                    it.notifyItemChanged(onCLickItem)
+            fun onCategoryClick(position: Int) {
+                adapter?.apply {
+                    (items!![activeCategoryPosition] as Category).isActive = false
+                    (items!![position] as Category).isActive = true
+                    notifyItemChanged(activeCategoryPosition)
+                    notifyItemChanged(position)
+                    activeCategoryPosition = position
+                    onCategoryClick(items!![position].itemId)
                 }
             }
-            adapter =
-                ListDelegationAdapter(horizontalCategoriesItems(onCategoryClick) { reselect ->
-                    item.categories[activeItem].isActive = false
-                    item.categories[reselect].isActive = true
-                    notifyAdapter(activeItem, reselect)
-                    activeItem = reselect
-                })
+            adapter = ListDelegationAdapter(horizontalCategoriesItems { position ->
+                onCategoryClick(position)
+            })
             bind {
+                item.categories[activeCategoryPosition].isActive = true
                 binding.recyclerCategories.adapter = adapter
                 binding.header.startField.text = getString(item.title)
                 binding.header.endField.text = getString(item.endTitle)
-                item.categories[activeItem].isActive = true
                 adapter.items = item.categories
             }
         }
 
-    private fun horizontalCategoriesItems(
-        onCategoryClick: (name: String) -> Unit,
-        reselect: (Int) -> Unit
-    ) =
+
+    private fun horizontalCategoriesItems(onCategoryClick: (position: Int) -> Unit) =
         adapterDelegateViewBinding<Category, MainListItem, ItemRecycleCategoryBinding>(
             { inflater, container ->
                 ItemRecycleCategoryBinding.inflate(inflater, container, false)
@@ -63,8 +62,7 @@ object MainScreenDelegates {
                     container.isActivated = item.isActive
                     name.isActivated = item.isActive
                     container.setOnClickListener {
-                        reselect(absoluteAdapterPosition)
-                        onCategoryClick(getString(item.name))
+                        onCategoryClick(absoluteAdapterPosition)
                     }
                     icon.setImageDrawable(getDrawable(item.icon))
                     name.text = getString(item.name)
@@ -135,8 +133,8 @@ object MainScreenDelegates {
                     glide.load(item.picture).into(image)
                     name.text = item.title
                     likeFill.isVisible = item.isFavorites
-                    price.text = item.discountPrice.toString()
-                    oldPrice.text = item.priceWithoutDiscount.toString()
+                    price.text = item.discountPrice
+                    oldPrice.text = item.priceWithoutDiscount
                     oldPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
                     likeButton.setOnClickListener { likeFill.isVisible = !likeFill.isVisible }
                 }
