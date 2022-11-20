@@ -1,4 +1,4 @@
-package ru.test.ecommerce.interactor.network.model
+package ru.test.network.model
 
 data class DeviceDetailsDTO(
     val CPU: String,

@@ -13,7 +13,7 @@ object Releases {
 object Modules {
     const val app = ":app"
     const val core = ":core"
-    const val model = ":model"
+    const val network = ":network"
     const val repository = ":repository"
     const val utils = ":utils"
 

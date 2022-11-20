@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import ru.test.ecommerce.interactor.local.ResourceProvider
-import ru.test.ecommerce.interactor.network.NetworkSource
+import ru.test.network.NetworkSource
 import ru.test.ecommerce.ui.cart.Cart
 import ru.test.ecommerce.ui.details.DeviceDetails
 import ru.test.ecommerce.ui.main.adapter.MainListItem

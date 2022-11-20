@@ -2,7 +2,6 @@ package ru.test.ecommerce.utils
 
 import ru.test.ecommerce.interactor.local.model.BestSeller
 import ru.test.ecommerce.interactor.local.model.HomeStore
-import ru.test.ecommerce.interactor.network.model.*
 import ru.test.ecommerce.ui.cart.Basket
 import ru.test.ecommerce.ui.cart.Cart
 import ru.test.ecommerce.ui.details.DeviceDetails
@@ -10,6 +9,7 @@ import ru.test.ecommerce.ui.details.adapter.DetailsListItem
 import ru.test.ecommerce.ui.details.adapter.items.ColorItem
 import ru.test.ecommerce.ui.details.adapter.items.ImageItem
 import ru.test.ecommerce.ui.details.adapter.items.MemoryItem
+import ru.test.network.model.*
 import java.text.NumberFormat
 import java.util.*
 

@@ -30,6 +30,7 @@ android {
 dependencies {
 
     implementation project(path: Modules.core)
+    implementation project(path: Modules.network)
 
     implementation Android.appcompat
     implementation Android.material
@@ -40,8 +41,6 @@ dependencies {
     implementation Kotlin.core
     implementation AdapterDelegates.adapter_delegates
     implementation AdapterDelegates.view_binding
-    implementation Retrofit.retrofit
-    implementation Retrofit.converter_gson
     implementation Glide.glide
     kapt Glide.compiler
     implementation Dagger.dagger

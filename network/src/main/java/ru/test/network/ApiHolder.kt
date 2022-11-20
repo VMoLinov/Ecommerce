@@ -1,9 +1,9 @@
-package ru.test.ecommerce.interactor.network
+package ru.test.network
 
 import retrofit2.http.GET
-import ru.test.ecommerce.interactor.network.model.CartDTO
-import ru.test.ecommerce.interactor.network.model.DeviceDetailsDTO
-import ru.test.ecommerce.interactor.network.model.ResultDTO
+import ru.test.network.model.CartDTO
+import ru.test.network.model.DeviceDetailsDTO
+import ru.test.network.model.ResultDTO
 
 interface ApiHolder {
 

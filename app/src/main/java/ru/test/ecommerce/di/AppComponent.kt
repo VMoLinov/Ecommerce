@@ -4,7 +4,9 @@ import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import ru.test.ecommerce.utils.AppViewModelFactory
+import javax.inject.Singleton
 
+@Singleton
 @Component(modules = [MainModule::class])
 interface AppComponent {
 
