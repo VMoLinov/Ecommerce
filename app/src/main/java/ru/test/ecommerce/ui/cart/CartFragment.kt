@@ -7,16 +7,16 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import ru.test.ecommerce.R
 import ru.test.ecommerce.databinding.FragmentCartBinding
-import ru.test.ecommerce.ui.main.BaseFragment
+import ru.test.core.ui.BaseFragment
+import ru.test.core.viewBinding
+import ru.test.ecommerce.App
 import ru.test.ecommerce.ui.main.MainFragment
-import ru.test.ecommerce.utils.getAppComponent
-import ru.test.ecommerce.utils.viewBinding
 
 class CartFragment : BaseFragment(R.layout.fragment_cart) {
 
     private val binding by viewBinding { FragmentCartBinding.bind(it) }
     private val viewModel by lazy {
-        ViewModelProvider(this, getAppComponent().viewModel())[CartViewModel::class.java]
+        ViewModelProvider(this, App.getComponent().viewModel())[CartViewModel::class.java]
     }
     private val adapter by lazy {
         CartListAdapter(

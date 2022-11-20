@@ -12,14 +12,15 @@ import ru.test.ecommerce.databinding.FragmentMainBinding
 import ru.test.ecommerce.ui.cart.CartFragment
 import ru.test.ecommerce.ui.details.DetailsFragment
 import ru.test.ecommerce.ui.main.adapter.MainListAdapter
-import ru.test.ecommerce.utils.getAppComponent
-import ru.test.ecommerce.utils.viewBinding
+import ru.test.core.ui.BaseFragment
+import ru.test.core.viewBinding
+import ru.test.ecommerce.App
 
 class MainFragment : BaseFragment(R.layout.fragment_main) {
 
     private val binding by viewBinding { FragmentMainBinding.bind(it) }
     private val viewModel by lazy {
-        ViewModelProvider(this, getAppComponent().viewModel())[MainViewModel::class.java]
+        ViewModelProvider(this, App.getComponent().viewModel())[MainViewModel::class.java]
     }
     private val adapter by lazy {
         MainListAdapter(

@@ -50,7 +50,7 @@ object Versions {
 
     // Test
     const val jUnit = "4.13.2"
-    const val runner = "1.1.4"
+    const val extjUnit = "1.1.4"
     const val espressoCore = "3.5.0"
 }
 
@@ -60,7 +60,7 @@ object Android {
     const val constraints = "androidx.constraintlayout:constraintlayout:${Versions.constraints}"
     const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.liveData}"
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}"
-    const val viewModels = "androidx.fragment:fragment-ktx:${Versions.viewModels}"
+    const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.viewModels}"
 }
 
 object Kotlin {
@@ -92,7 +92,7 @@ object AdapterDelegates {
 
 object TestImpl {
     const val junit = "junit:junit:${Versions.jUnit}"
-    const val runner = "androidx.test:runner:${Versions.runner}"
+    const val ext_junit = "androidx.test.ext:junit:${Versions.extjUnit}"
     const val espresso =
         "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
 }

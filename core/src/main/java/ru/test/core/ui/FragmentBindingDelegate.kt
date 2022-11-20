@@ -1,4 +1,4 @@
-package ru.test.ecommerce.utils
+package ru.test.core.ui
 
 import android.view.View
 import androidx.fragment.app.Fragment

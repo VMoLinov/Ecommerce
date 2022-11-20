@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import ru.test.ecommerce.R
 import ru.test.ecommerce.databinding.FragmentDetailsBinding
 import ru.test.ecommerce.ui.details.adapter.DetailsListAdapter
-import ru.test.ecommerce.ui.main.BaseFragment
+import ru.test.core.ui.BaseFragment
+import ru.test.core.viewBinding
+import ru.test.ecommerce.App
 import ru.test.ecommerce.ui.main.MainFragment
 import ru.test.ecommerce.utils.ProminentLayoutManager
-import ru.test.ecommerce.utils.getAppComponent
-import ru.test.ecommerce.utils.viewBinding
 
 class DetailsFragment : BaseFragment(R.layout.fragment_details) {
 
@@ -20,7 +20,7 @@ class DetailsFragment : BaseFragment(R.layout.fragment_details) {
     private val adapterImages = DetailsListAdapter().apply { initImages() }
     private val adapterSpec = DetailsListAdapter().apply { initSpecs() }
     private val viewModel by lazy {
-        ViewModelProvider(this, getAppComponent().viewModel())[DetailsViewModel::class.java]
+        ViewModelProvider(this, App.getComponent().viewModel())[DetailsViewModel::class.java]
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

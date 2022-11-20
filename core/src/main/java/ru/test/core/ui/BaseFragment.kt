@@ -1,8 +1,8 @@
-package ru.test.ecommerce.ui.main
+package ru.test.core.ui
 
 import androidx.fragment.app.Fragment
 import kotlinx.coroutines.flow.Flow
-import ru.test.ecommerce.utils.launchAndRepeatOnStart
+import ru.test.core.launchAndRepeatOnStart
 
 abstract class BaseFragment(layoutId: Int) : Fragment(layoutId) {
 

@@ -29,12 +29,14 @@ android {
 
 dependencies {
 
+    implementation project(path: Modules.core)
+
     implementation Android.appcompat
     implementation Android.material
     implementation Android.constraints
     implementation Android.liveData
     implementation Android.viewModel
-    implementation Android.viewModels
+    implementation Android.fragmentKtx
     implementation Kotlin.core
     implementation AdapterDelegates.adapter_delegates
     implementation AdapterDelegates.view_binding
@@ -46,6 +48,6 @@ dependencies {
     kapt Dagger.compiler
 
     testImplementation TestImpl.junit
-    androidTestImplementation TestImpl.runner
+    androidTestImplementation TestImpl.ext_junit
     androidTestImplementation TestImpl.espresso
 }

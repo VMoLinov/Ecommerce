@@ -11,10 +11,10 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import ru.test.core.viewBinding
+import ru.test.ecommerce.App
 import ru.test.ecommerce.R
 import ru.test.ecommerce.databinding.BottomSheetBinding
-import ru.test.ecommerce.utils.getAppComponent
-import ru.test.ecommerce.utils.viewBinding
 
 class BottomSheet : BottomSheetDialogFragment(R.layout.bottom_sheet) {
 
@@ -22,7 +22,7 @@ class BottomSheet : BottomSheetDialogFragment(R.layout.bottom_sheet) {
     private val viewModel by lazy {
         ViewModelProvider(
             requireActivity(),
-            getAppComponent().viewModel()
+            App.getComponent().viewModel()
         )[BottomSheetViewModel::class.java]
     }
 
