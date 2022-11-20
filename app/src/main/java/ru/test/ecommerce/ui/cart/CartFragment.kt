@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import ru.test.ecommerce.R
 import ru.test.ecommerce.databinding.FragmentCartBinding
 import ru.test.ecommerce.ui.main.BaseFragment
+import ru.test.ecommerce.ui.main.MainFragment
 import ru.test.ecommerce.utils.getAppComponent
 import ru.test.ecommerce.utils.viewBinding
 
@@ -31,9 +32,21 @@ class CartFragment : BaseFragment(R.layout.fragment_cart) {
         super.onViewCreated(view, savedInstanceState)
         binding.recyclerCart.adapter = adapter
         viewModel.data.collectWhileStarted { cart ->
+            binding.checkout.isEnabled = cart?.basket?.isEmpty() == false
             adapter.items = cart?.basket
             adapter.notifyDataSetChanged()
             binding.total.text = cart?.total
+            binding.delivery.text = cart?.delivery
+        }
+        binding.buttonBack.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
+        binding.checkout.setOnClickListener {
+            parentFragmentManager.setFragmentResult(
+                MainFragment.CLEAR_CART, // Put data
+                Bundle().apply { putString(MainFragment.CLEAR_CART, "Checkout complete!") }
+            )
+            parentFragmentManager.popBackStack()
         }
     }
 

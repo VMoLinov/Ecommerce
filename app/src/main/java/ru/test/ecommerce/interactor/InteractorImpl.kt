@@ -40,24 +40,24 @@ class InteractorImpl @Inject constructor(
         }
     }
 
-    override suspend fun deleteItemFromCart(id: Long): Cart? {
-        cart?.let {
-            it.basket = it.basket.filter { item -> item.id != id }.toMutableList()
-            it.total = it.basket.basketToTotal()
-        }
-        return cart?.copy()
+    override suspend fun deleteItemFromCart(id: Long): Cart = with(cart!!) {
+        basket = basket.filter { item -> item.id != id }
+        returnWithTotal()
     }
 
-    override suspend fun minusPosition(id: Long): Cart? = quantity(-1, id)
+    override suspend fun plusPosition(id: Long): Cart = with(cart!!) {
+        basket.map { if (it.id == id) it.quantity++ }
+        returnWithTotal()
+    }
 
-    override suspend fun plusPosition(id: Long): Cart? = quantity(1, id)
+    override suspend fun minusPosition(id: Long): Cart = with(cart!!) {
+        basket.map { if (it.id == id) if (--it.quantity == 0) return deleteItemFromCart(id) }
+        returnWithTotal()
+    }
 
-    private fun quantity(int: Int, id: Long): Cart? {
-        cart?.let {
-            it.basket.map { basket -> if (basket.id == id) basket.quantity += int }
-            it.total = it.basket.basketToTotal()
-        }
-        return cart?.copy()
+    private fun Cart.returnWithTotal(): Cart {
+        total = basket.getTotal()
+        return copy()
     }
 
     override suspend fun getBrands(): List<String> = local.getBrands()

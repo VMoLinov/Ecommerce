@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="white_background">#F8F8F8</color>
     <color name="color_on_surface">#B3B3C3</color>
+    <color name="rating_bar_active">#FFB800</color>
+    <color name="details_ic_color">#B7B7B7</color>
 </resources>

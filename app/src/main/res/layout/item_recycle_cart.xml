@@ -18,30 +18,34 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_marginStart="20dp"
+        android:layout_marginHorizontal="20dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/counts"
         app:layout_constraintStart_toEndOf="@id/image"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="2"
             android:textColor="@color/white"
+            android:textSize="20sp"
             tools:text="Galaxy Note 20 Ultra" />
 
         <TextView
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="20sp"
             tools:text="$3000.00" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <FrameLayout
+        android:id="@+id/counts"
         android:layout_width="30dp"
         android:layout_height="70dp"
         android:layout_marginEnd="20dp"

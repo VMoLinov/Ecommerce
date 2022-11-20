@@ -13,11 +13,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerHotSales"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginVertical="12dp"
+        android:layout_height="@dimen/recycler_hot_sales_height"
+        android:layout_marginVertical="@dimen/recycler_hot_sales_margin"
         android:clipToPadding="false"
         android:orientation="horizontal"
-        android:paddingHorizontal="12dp"
+        android:paddingHorizontal="@dimen/recycler_hot_sales_padding"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_recycle_hot_sales" />
 </androidx.appcompat.widget.LinearLayoutCompat>

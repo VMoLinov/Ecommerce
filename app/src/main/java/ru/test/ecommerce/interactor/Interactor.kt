@@ -13,7 +13,7 @@ interface Interactor {
     suspend fun getBrands(): List<String>
     suspend fun getPrices(): List<String>
     suspend fun getSizes(): List<String>
-    suspend fun deleteItemFromCart(id: Long): Cart?
-    suspend fun plusPosition(id: Long): Cart?
-    suspend fun minusPosition(id: Long): Cart?
+    suspend fun deleteItemFromCart(id: Long): Cart
+    suspend fun plusPosition(id: Long): Cart
+    suspend fun minusPosition(id: Long): Cart
 }

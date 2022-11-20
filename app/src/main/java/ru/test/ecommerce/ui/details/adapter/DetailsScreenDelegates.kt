@@ -8,6 +8,7 @@ import android.os.Build
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.FitCenter
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import ru.test.ecommerce.databinding.ItemRecycleImagesBinding
 import ru.test.ecommerce.databinding.ItemRecycleSpecColorBinding
@@ -26,7 +27,7 @@ object DetailsScreenDelegates {
             bind {
                 Glide.with(binding.root)
                     .load(item.url)
-                    .transform(FitCenter())
+                    .transform(FitCenter(), RoundedCorners(40))
                     .into(binding.image)
             }
         }

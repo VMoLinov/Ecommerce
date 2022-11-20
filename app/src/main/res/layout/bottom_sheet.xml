@@ -21,7 +21,7 @@
 
         <Button
             android:id="@+id/button_done"
-            style="@style/Button.NoInsets"
+            style="@style/Theme.Button.NoInsets"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="end"

@@ -10,15 +10,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:textSize="25sp"
-        tools:text="SELECT CATEGORY" />
+        android:textSize="@dimen/main_items_header_text_size"
+        android:textStyle="bold"
+        tools:text="Select Category" />
 
     <TextView
         android:id="@+id/endField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:textColor="?attr/colorSecondary"
-        android:textSize="15sp"
+        android:layout_gravity="end|center"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="@dimen/main_items_header_end_text_size"
         tools:text="view all" />
 </FrameLayout>

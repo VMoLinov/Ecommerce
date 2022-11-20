@@ -5,4 +5,6 @@
     android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:contentDescription="@string/product_photo"
+    android:elevation="100dp"
+    android:padding="20dp"
     tools:src="@drawable/tools_best_seller_image" />

@@ -23,7 +23,7 @@
     <string name="spec_icon">Spec icon</string>
     <string name="apply_icon">Apply icon</string>
     <string name="add_to_cart">Add to cart</string>
-    <string name="my_cart">My cart</string>
+    <string name="my_cart">My Cart</string>
     <string name="add_adress">Add address</string>
     <string name="item_photo">Item photo</string>
     <string name="clear_position">Clear position</string>
@@ -45,6 +45,7 @@
     <string name="cart_total">Total</string>
     <string name="cart_delivery">Delivery</string>
     <string name="cart_checkout">Checkout</string>
+    <string name="main_city_example">Zihuatanejo, Gro</string>
     <string-array name="brands">
         <item>All</item>
         <item>Samsung</item>

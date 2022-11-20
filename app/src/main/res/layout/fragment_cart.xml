@@ -49,6 +49,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:text="@string/my_cart"
+        android:textSize="35sp"
+        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/header" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -102,6 +104,7 @@
             android:id="@+id/total"
             android:layout_columnWeight="1"
             android:textColor="@color/white"
+            android:textStyle="bold"
             tools:text="5000$" />
 
         <TextView
@@ -110,8 +113,10 @@
             android:textColor="@color/white" />
 
         <TextView
+            android:id="@+id/delivery"
             android:layout_columnWeight="1"
             android:textColor="@color/white"
+            android:textStyle="bold"
             tools:text="Free" />
     </GridLayout>
 
@@ -125,11 +130,13 @@
 
     <Button
         android:id="@+id/checkout"
-        style="@style/Button.NoInsets"
+        style="@style/Theme.Button.NoInsets"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:backgroundTint="@color/color_secondary"
         android:text="@string/cart_checkout"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

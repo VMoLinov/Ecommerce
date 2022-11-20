@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_items_header_text_size">25sp</dimen>
+    <dimen name="main_items_header_end_text_size">15sp</dimen>
+    <dimen name="recycler_category_padding">12dp</dimen>
+    <dimen name="qr_code_size">15dp</dimen>
+    <dimen name="recycler_hot_sales_height">200dp</dimen>
+    <dimen name="recycler_hot_sales_margin">12dp</dimen>
+    <dimen name="recycler_hot_sales_padding">12dp</dimen>
+    <dimen name="recycler_hot_sales_new_size">30dp</dimen>
+    <dimen name="recycler_hot_sales_item_margin">24dp</dimen>
+    <dimen name="recycler_hot_sales_item_new_text_size">11sp</dimen>
+    <dimen name="recycler_hot_sales_item_button_text_size">11sp</dimen>
+    <dimen name="recycler_hot_sales_subtitle_text_size">11sp</dimen>
+    <dimen name="recycler_hot_sales_title_text_size">25sp</dimen>
+</resources>

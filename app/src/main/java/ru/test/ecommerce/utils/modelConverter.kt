@@ -39,7 +39,7 @@ fun DeviceDetailsDTO.toDeviceDetails() = DeviceDetails(
 )
 
 fun CartDTO.toCart() =
-    Cart(basket.map { it.toBasket() }.toMutableList(), delivery, id, basket.basketDtoToTotal())
+    Cart(basket.map { it.toBasket() }, delivery, id, basket.basketDtoToTotal())
 
 fun BasketDTO.toBasket() = Basket(id, images, price, title, 1)
 
@@ -47,14 +47,14 @@ fun List<BasketDTO>.basketDtoToTotal(): String {
     return sumOf { it.price }.toPrice(0)
 }
 
-fun List<Basket>.basketToTotal(): String {
+fun List<Basket>.getTotal(): String {
     return sumOf { it.priceNum * it.quantity }.toPrice(2)
 }
 
 private fun combineSpecs(colors: List<String>, memories: List<String>): List<DetailsListItem> {
     val list = mutableListOf<DetailsListItem>()
     colors.forEach { list.add(ColorItem(it)) }
-    memories.forEach { list.add(MemoryItem(it)) }
+    memories.forEach { list.add(MemoryItem("$it GB")) }
     return list
 }
 
