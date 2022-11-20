@@ -67,7 +67,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
                     }
                 }
             }
-            true
+            false
         }
     }
 
