@@ -9,7 +9,7 @@ class CartListAdapter(
     onMinusClick: (Long) -> Unit,
     onPlusClick: (Long) -> Unit,
     onDeleteClick: (Long) -> Unit
-) : AsyncListDifferDelegationAdapter<Basket>(BasketDiffUtilItemCallback()) {
+) : AsyncListDifferDelegationAdapter<ru.test.model.model.Basket>(BasketDiffUtilItemCallback()) {
 
     init {
         delegatesManager.addDelegate(

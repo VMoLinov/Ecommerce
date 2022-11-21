@@ -17,3 +17,5 @@ rootProject.name = "Ecommerce"
 include ':app'
 include ':core'
 include ':network'
+include ':featureMain'
+include ':model'

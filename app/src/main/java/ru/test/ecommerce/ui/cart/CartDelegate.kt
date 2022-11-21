@@ -5,7 +5,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import ru.test.ecommerce.databinding.ItemRecycleCartBinding
-import ru.test.ecommerce.utils.toPrice
+import ru.test.core.toPrice
 
 object CartDelegate {
 
@@ -14,7 +14,7 @@ object CartDelegate {
         onMinusClick: (Long) -> Unit,
         onPlusClick: (Long) -> Unit,
         onDeleteClick: (Long) -> Unit
-    ) = adapterDelegateViewBinding<Basket, Basket, ItemRecycleCartBinding>(
+    ) = adapterDelegateViewBinding<ru.test.model.model.Basket, ru.test.model.model.Basket, ItemRecycleCartBinding>(
         { inflater, container ->
             ItemRecycleCartBinding.inflate(inflater, container, false)
         }) {

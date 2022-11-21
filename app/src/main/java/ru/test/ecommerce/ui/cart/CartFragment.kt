@@ -5,12 +5,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import ru.test.core.RequestKeys
 import ru.test.ecommerce.R
 import ru.test.ecommerce.databinding.FragmentCartBinding
 import ru.test.core.ui.BaseFragment
 import ru.test.core.viewBinding
-import ru.test.ecommerce.App
-import ru.test.ecommerce.ui.main.MainFragment
+import ru.test.core.di.App
 
 class CartFragment : BaseFragment(R.layout.fragment_cart) {
 
@@ -37,20 +37,19 @@ class CartFragment : BaseFragment(R.layout.fragment_cart) {
             adapter.notifyDataSetChanged()
             binding.total.text = cart?.total
             binding.delivery.text = cart?.delivery
+            if (cart?.basket?.isEmpty() == true) setFragmentResultEmptyCart()
         }
-        binding.buttonBack.setOnClickListener {
-            parentFragmentManager.popBackStack()
-        }
+        binding.buttonBack.setOnClickListener { setFragmentResultBackStack() }
         binding.checkout.setOnClickListener {
-            parentFragmentManager.setFragmentResult(
-                MainFragment.CLEAR_CART, // Put data
-                Bundle().apply { putString(MainFragment.CLEAR_CART, "Checkout complete!") }
-            )
-            parentFragmentManager.popBackStack()
+            setFragmentResultEmptyCart()
+            setFragmentResultBackStack()
         }
     }
 
-    companion object {
-        fun newInstance(): CartFragment = CartFragment()
+    private fun setFragmentResultEmptyCart() {
+        requireActivity().supportFragmentManager.setFragmentResult(
+            RequestKeys.CLEAR_CART.key,
+            Bundle()
+        )
     }
 }

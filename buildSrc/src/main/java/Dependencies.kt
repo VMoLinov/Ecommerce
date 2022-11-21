@@ -14,7 +14,8 @@ object Modules {
     const val app = ":app"
     const val core = ":core"
     const val network = ":network"
-    const val repository = ":repository"
+    const val model = ":model"
+    const val featureMain = ":featureMain"
     const val utils = ":utils"
 
     //Features
@@ -47,6 +48,9 @@ object Versions {
 
     // Adapter Delegates
     const val adapterDelegates = "4.3.2"
+
+    // Navigation
+    const val navigation = "2.5.3"
 
     // Test
     const val jUnit = "4.13.2"
@@ -88,6 +92,11 @@ object AdapterDelegates {
         "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:${Versions.adapterDelegates}"
     const val view_binding =
         "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:${Versions.adapterDelegates}"
+}
+
+object Navigation {
+    const val fragment_ktx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+    const val ui = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
 }
 
 object TestImpl {

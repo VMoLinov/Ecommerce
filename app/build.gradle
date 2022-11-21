@@ -31,6 +31,8 @@ dependencies {
 
     implementation project(path: Modules.core)
     implementation project(path: Modules.network)
+    implementation project(path: Modules.model)
+    implementation project(path: Modules.featureMain)
 
     implementation Android.appcompat
     implementation Android.material
@@ -42,6 +44,8 @@ dependencies {
     implementation AdapterDelegates.adapter_delegates
     implementation AdapterDelegates.view_binding
     implementation Glide.glide
+    implementation Navigation.fragment_ktx
+    implementation Navigation.ui
     kapt Glide.compiler
     implementation Dagger.dagger
     kapt Dagger.compiler

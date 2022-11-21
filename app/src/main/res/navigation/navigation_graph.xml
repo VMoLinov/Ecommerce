@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="ru.test.featuremain.MainFragment"
+        android:label="MainFragment">
+
+        <action
+            android:id="@+id/mainToDetails"
+            app:destination="@id/detailsFragment"
+            app:popUpTo="@id/mainFragment" />
+        <action
+            android:id="@+id/bottomSheet"
+            app:destination="@id/bottomSheet"
+            app:popUpTo="@id/mainFragment" />
+        <action
+            android:id="@+id/mainToCart"
+            app:destination="@id/cartFragment"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bottomSheet"
+        android:name="ru.test.featuremain.BottomSheet"
+        android:label="BottomSheet" />
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="ru.test.ecommerce.ui.details.DetailsFragment"
+        tools:layout="@layout/fragment_details" />
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="ru.test.ecommerce.ui.cart.CartFragment"
+        android:label="cart_fragment"
+        tools:layout="@layout/fragment_cart" />
+</navigation>

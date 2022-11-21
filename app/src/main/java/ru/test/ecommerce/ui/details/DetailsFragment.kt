@@ -10,9 +10,10 @@ import ru.test.ecommerce.databinding.FragmentDetailsBinding
 import ru.test.ecommerce.ui.details.adapter.DetailsListAdapter
 import ru.test.core.ui.BaseFragment
 import ru.test.core.viewBinding
-import ru.test.ecommerce.App
-import ru.test.ecommerce.ui.main.MainFragment
-import ru.test.ecommerce.utils.ProminentLayoutManager
+import ru.test.core.di.App
+import ru.test.core.ProminentLayoutManager
+import ru.test.core.RequestKeys
+import ru.test.model.model.DeviceDetails
 
 class DetailsFragment : BaseFragment(R.layout.fragment_details) {
 
@@ -55,24 +56,16 @@ class DetailsFragment : BaseFragment(R.layout.fragment_details) {
     }
 
     private fun FragmentDetailsBinding.clickListeners(data: DeviceDetails) {
-        buttonBack.setOnClickListener { parentFragmentManager.popBackStack() }
+        buttonBack.setOnClickListener { setFragmentResultBackStack() }
         buttonCart.setOnClickListener {
             //TODO check cart before open
         }
         buttonAddToCart.setOnClickListener {
-            parentFragmentManager.setFragmentResult(
-                MainFragment.ADD_TO_CART,
-                Bundle().apply { putString(MainFragment.ADD_TO_CART, data.id) }
+            requireActivity().supportFragmentManager.setFragmentResult(
+                RequestKeys.ADD_TO_CART.key,
+                Bundle().apply { putString("", data.id) }
             )
             Toast.makeText(context, "Item add to cart!", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    companion object {
-        private const val INCOME_ID = "id"
-        fun newInstance(id: Long = -1): DetailsFragment {
-            val bundle = Bundle().apply { putLong(INCOME_ID, id) }
-            return DetailsFragment().apply { arguments = bundle }
         }
     }
 }

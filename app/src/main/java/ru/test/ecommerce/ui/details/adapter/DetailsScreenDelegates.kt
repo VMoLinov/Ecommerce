@@ -13,14 +13,14 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import ru.test.ecommerce.databinding.ItemRecycleImagesBinding
 import ru.test.ecommerce.databinding.ItemRecycleSpecColorBinding
 import ru.test.ecommerce.databinding.ItemRecycleSpecMemoryBinding
-import ru.test.ecommerce.ui.details.adapter.items.ColorItem
-import ru.test.ecommerce.ui.details.adapter.items.ImageItem
-import ru.test.ecommerce.ui.details.adapter.items.MemoryItem
+import ru.test.model.ColorItem
+import ru.test.model.ImageItem
+import ru.test.model.MemoryItem
 
 object DetailsScreenDelegates {
 
     fun productImagesDelegate() =
-        adapterDelegateViewBinding<ImageItem, DetailsListItem, ItemRecycleImagesBinding>(
+        adapterDelegateViewBinding<ru.test.model.ImageItem, ru.test.model.model.DetailsListItem, ItemRecycleImagesBinding>(
             { inflater, container ->
                 ItemRecycleImagesBinding.inflate(inflater, container, false)
             }) {
@@ -33,12 +33,12 @@ object DetailsScreenDelegates {
         }
 
     fun specColorsDelegate(onColorClick: (Int) -> Unit) =
-        adapterDelegateViewBinding<ColorItem, DetailsListItem, ItemRecycleSpecColorBinding>(
+        adapterDelegateViewBinding<ru.test.model.ColorItem, ru.test.model.model.DetailsListItem, ItemRecycleSpecColorBinding>(
             { inflater, container ->
                 ItemRecycleSpecColorBinding.inflate(inflater, container, false)
             }) {
             binding.root.setOnClickListener {
-                onColorClick(absoluteAdapterPosition)
+                onColorClick(adapterPosition)
             }
             bind {
                 binding.isSelect.isVisible = item.isActive
@@ -54,12 +54,12 @@ object DetailsScreenDelegates {
         }
 
     fun specMemoryDelegate(onMemoryClick: (Int) -> Unit) =
-        adapterDelegateViewBinding<MemoryItem, DetailsListItem, ItemRecycleSpecMemoryBinding>(
+        adapterDelegateViewBinding<ru.test.model.MemoryItem, ru.test.model.model.DetailsListItem, ItemRecycleSpecMemoryBinding>(
             { inflater, container ->
                 ItemRecycleSpecMemoryBinding.inflate(inflater, container, false)
             }) {
             binding.root.setOnClickListener {
-                onMemoryClick(absoluteAdapterPosition)
+                onMemoryClick(adapterPosition)
             }
             bind {
                 binding.shape.isActivated = item.isActive

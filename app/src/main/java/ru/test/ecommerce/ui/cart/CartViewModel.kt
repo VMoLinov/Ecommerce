@@ -5,11 +5,11 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import ru.test.ecommerce.interactor.Interactor
+import ru.test.core.Interactor
 
 class CartViewModel(private val interactor: Interactor) : ViewModel() {
 
-    val data = MutableStateFlow<Cart?>(null)
+    val data = MutableStateFlow<ru.test.model.model.Cart?>(null)
 
     init {
         viewModelScope.launch {
