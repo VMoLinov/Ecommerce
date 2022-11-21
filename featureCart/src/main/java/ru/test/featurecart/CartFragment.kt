@@ -1,16 +1,16 @@
-package ru.test.ecommerce.ui.cart
+package ru.test.featurecart
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import ru.test.core.utils.RequestKeys
-import ru.test.ecommerce.R
-import ru.test.ecommerce.databinding.FragmentCartBinding
-import ru.test.core.ui.BaseFragment
-import ru.test.core.utils.viewBinding
 import ru.test.core.App
+import ru.test.core.ui.BaseFragment
+import ru.test.core.utils.RequestKeys
+import ru.test.core.utils.viewBinding
+import ru.test.featurecart.adapter.CartListAdapter
+import ru.test.featurecart.databinding.FragmentCartBinding
 
 class CartFragment : BaseFragment(R.layout.fragment_cart) {
 

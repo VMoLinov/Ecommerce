@@ -1,8 +1,7 @@
-package ru.test.ecommerce.ui.cart
+package ru.test.featurecart.adapter
 
 import com.bumptech.glide.RequestManager
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
-import ru.test.ecommerce.utils.BasketDiffUtilItemCallback
 import ru.test.model.model.cart.Basket
 
 class CartListAdapter(

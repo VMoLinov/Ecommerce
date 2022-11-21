@@ -1,4 +1,4 @@
-package ru.test.ecommerce.ui.details
+package ru.test.featuredetails
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

@@ -1,18 +1,17 @@
-package ru.test.ecommerce.ui.details
+package ru.test.featuredetails
 
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.PagerSnapHelper
-import ru.test.ecommerce.R
-import ru.test.ecommerce.databinding.FragmentDetailsBinding
-import ru.test.ecommerce.ui.details.adapter.DetailsListAdapter
+import ru.test.featuredetails.adapter.DetailsListAdapter
 import ru.test.core.ui.BaseFragment
 import ru.test.core.utils.viewBinding
 import ru.test.core.App
 import ru.test.core.utils.ProminentLayoutManager
 import ru.test.core.utils.RequestKeys
+import ru.test.featuredetails.databinding.FragmentDetailsBinding
 import ru.test.model.model.details.DeviceDetails
 
 class DetailsFragment : BaseFragment(R.layout.fragment_details) {

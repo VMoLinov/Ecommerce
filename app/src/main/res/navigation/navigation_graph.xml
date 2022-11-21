@@ -31,12 +31,12 @@
 
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="ru.test.ecommerce.ui.details.DetailsFragment"
+        android:name="ru.test.featuredetails.DetailsFragment"
         tools:layout="@layout/fragment_details" />
 
     <fragment
         android:id="@+id/cartFragment"
-        android:name="ru.test.ecommerce.ui.cart.CartFragment"
+        android:name="ru.test.featurecart.CartFragment"
         android:label="cart_fragment"
         tools:layout="@layout/fragment_cart" />
 </navigation>

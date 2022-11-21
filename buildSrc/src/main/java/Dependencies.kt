@@ -16,7 +16,8 @@ object Modules {
     const val network = ":network"
     const val model = ":model"
     const val featureMain = ":featureMain"
-    const val utils = ":utils"
+    const val featureDetails = ":featureDetails"
+    const val featureCart = ":featureCart"
 
     //Features
     const val historyScreen = ":historyScreen"

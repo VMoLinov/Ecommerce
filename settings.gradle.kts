@@ -1,5 +1,11 @@
 @file:Suppress("UnstableApiUsage")
 
+include(":featureCart")
+
+
+include(":featureDetails")
+
+
 pluginManagement {
     repositories {
         gradlePluginPortal()

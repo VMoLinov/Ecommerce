@@ -1,4 +1,4 @@
-package ru.test.ecommerce.ui.details.adapter
+package ru.test.featuredetails.adapter
 
 import android.graphics.BlendMode
 import android.graphics.BlendModeColorFilter
@@ -10,9 +10,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
-import ru.test.ecommerce.databinding.ItemRecycleImagesBinding
-import ru.test.ecommerce.databinding.ItemRecycleSpecColorBinding
-import ru.test.ecommerce.databinding.ItemRecycleSpecMemoryBinding
+import ru.test.featuredetails.databinding.ItemRecycleImagesBinding
+import ru.test.featuredetails.databinding.ItemRecycleSpecColorBinding
+import ru.test.featuredetails.databinding.ItemRecycleSpecMemoryBinding
 import ru.test.model.model.details.ColorItem
 import ru.test.model.model.details.ImageItem
 import ru.test.model.model.details.MemoryItem

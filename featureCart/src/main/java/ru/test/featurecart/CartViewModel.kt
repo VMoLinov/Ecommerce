@@ -1,4 +1,4 @@
-package ru.test.ecommerce.ui.cart
+package ru.test.featurecart
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

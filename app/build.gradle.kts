@@ -33,6 +33,8 @@ dependencies {
     implementation (project(Modules.network))
     implementation (project(Modules.model))
     implementation (project(Modules.featureMain))
+    implementation (project(Modules.featureDetails))
+    implementation (project(Modules.featureCart))
 
     implementation (Android.appcompat)
     implementation (Android.material)

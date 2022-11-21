@@ -1,7 +1,6 @@
-package ru.test.ecommerce.ui.details.adapter
+package ru.test.featuredetails.adapter
 
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
-import ru.test.ecommerce.utils.DetailsDiffUtilItemCallback
 import ru.test.model.model.details.ColorItem
 import ru.test.model.model.details.DetailsListItem
 

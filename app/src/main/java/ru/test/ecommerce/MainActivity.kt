@@ -23,6 +23,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupNav()
+        setNavigationListener()
+        setFragmentResultListeners()
+        cartBadge = binding.navigation.bottomNavigationView.getOrCreateBadge(R.id.menuCart)
+        cartBadge.isVisible = false
+    }
+
+    private fun setFragmentResultListeners() {
+        RequestKeys.values().forEach {
+            supportFragmentManager.setFragmentResultListener(
+                it.key, this, resultListener
+            )
+        }
+    }
+
+    private fun setNavigationListener() {
         binding.navigation.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menuCart -> {
@@ -32,20 +47,6 @@ class MainActivity : AppCompatActivity() {
             }
             false
         }
-        supportFragmentManager.setFragmentResultListener(
-            RequestKeys.ADD_TO_CART.key, this, resultListener
-        )
-        supportFragmentManager.setFragmentResultListener(
-            RequestKeys.OPEN_DETAILS.key, this, resultListener
-        )
-        supportFragmentManager.setFragmentResultListener(
-            RequestKeys.CLEAR_CART.key, this, resultListener
-        )
-        supportFragmentManager.setFragmentResultListener(
-            RequestKeys.BACK_STACK.key, this, resultListener
-        )
-        cartBadge = binding.navigation.bottomNavigationView.getOrCreateBadge(R.id.menuCart)
-        cartBadge.isVisible = false
     }
 
     private val resultListener = FragmentResultListener { requestKey, _ ->
