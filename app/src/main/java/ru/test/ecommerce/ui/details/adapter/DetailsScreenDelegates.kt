@@ -13,14 +13,15 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import ru.test.ecommerce.databinding.ItemRecycleImagesBinding
 import ru.test.ecommerce.databinding.ItemRecycleSpecColorBinding
 import ru.test.ecommerce.databinding.ItemRecycleSpecMemoryBinding
-import ru.test.model.ColorItem
-import ru.test.model.ImageItem
-import ru.test.model.MemoryItem
+import ru.test.model.model.details.ColorItem
+import ru.test.model.model.details.ImageItem
+import ru.test.model.model.details.MemoryItem
+import ru.test.model.model.details.DetailsListItem
 
 object DetailsScreenDelegates {
 
     fun productImagesDelegate() =
-        adapterDelegateViewBinding<ru.test.model.ImageItem, ru.test.model.model.DetailsListItem, ItemRecycleImagesBinding>(
+        adapterDelegateViewBinding<ImageItem, DetailsListItem, ItemRecycleImagesBinding>(
             { inflater, container ->
                 ItemRecycleImagesBinding.inflate(inflater, container, false)
             }) {
@@ -33,7 +34,7 @@ object DetailsScreenDelegates {
         }
 
     fun specColorsDelegate(onColorClick: (Int) -> Unit) =
-        adapterDelegateViewBinding<ru.test.model.ColorItem, ru.test.model.model.DetailsListItem, ItemRecycleSpecColorBinding>(
+        adapterDelegateViewBinding<ColorItem, DetailsListItem, ItemRecycleSpecColorBinding>(
             { inflater, container ->
                 ItemRecycleSpecColorBinding.inflate(inflater, container, false)
             }) {
@@ -54,7 +55,7 @@ object DetailsScreenDelegates {
         }
 
     fun specMemoryDelegate(onMemoryClick: (Int) -> Unit) =
-        adapterDelegateViewBinding<ru.test.model.MemoryItem, ru.test.model.model.DetailsListItem, ItemRecycleSpecMemoryBinding>(
+        adapterDelegateViewBinding<MemoryItem, DetailsListItem, ItemRecycleSpecMemoryBinding>(
             { inflater, container ->
                 ItemRecycleSpecMemoryBinding.inflate(inflater, container, false)
             }) {

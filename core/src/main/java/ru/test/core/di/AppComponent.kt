@@ -3,7 +3,7 @@ package ru.test.core.di
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
-import ru.test.core.AppViewModelFactory
+import ru.test.core.viewmodel.AppViewModelFactory
 import javax.inject.Singleton
 
 @Singleton

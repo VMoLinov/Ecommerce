@@ -3,8 +3,8 @@ package ru.test.core.di
 import android.content.Context
 import dagger.Module
 import dagger.Provides
-import ru.test.core.Interactor
-import ru.test.core.InteractorImpl
+import ru.test.core.interactor.Interactor
+import ru.test.core.interactor.InteractorImpl
 import ru.test.model.AppResourceProvider
 import ru.test.model.ResourceProvider
 import ru.test.network.NetworkSource

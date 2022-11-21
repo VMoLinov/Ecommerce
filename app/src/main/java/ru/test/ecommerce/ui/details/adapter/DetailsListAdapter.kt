@@ -2,8 +2,10 @@ package ru.test.ecommerce.ui.details.adapter
 
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import ru.test.ecommerce.utils.DetailsDiffUtilItemCallback
+import ru.test.model.model.details.ColorItem
+import ru.test.model.model.details.DetailsListItem
 
-internal class DetailsListAdapter : AsyncListDifferDelegationAdapter<ru.test.model.model.DetailsListItem>(
+internal class DetailsListAdapter : AsyncListDifferDelegationAdapter<DetailsListItem>(
     DetailsDiffUtilItemCallback()
 ) {
     private var activeColor = 0
@@ -21,7 +23,7 @@ internal class DetailsListAdapter : AsyncListDifferDelegationAdapter<ru.test.mod
 
     fun initActiveItems() {
         var colors = 0
-        items.forEach { if (it is ru.test.model.ColorItem) colors++ }
+        items.forEach { if (it is ColorItem) colors++ }
         activeMemory = colors
         items[activeColor].isActive = true
         items[activeMemory].isActive = true

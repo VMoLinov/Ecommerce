@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="ru.test.featuremain.MainFragment"
+        android:name="ru.test.featuremain.ui.MainFragment"
         android:label="MainFragment">
 
         <action
@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/bottomSheet"
-        android:name="ru.test.featuremain.BottomSheet"
+        android:name="ru.test.featuremain.ui.BottomSheet"
         android:label="BottomSheet" />
 
     <fragment

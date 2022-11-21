@@ -1,8 +1,8 @@
 package ru.test.model
 
 import android.content.Context
-import ru.test.model.model.BestSeller
-import ru.test.model.model.HomeStore
+import ru.test.model.model.main.BestSeller
+import ru.test.model.model.main.*
 import javax.inject.Inject
 
 class AppResourceProvider @Inject constructor(

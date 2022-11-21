@@ -9,15 +9,15 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
-import ru.test.core.ProminentLayoutManager
+import ru.test.core.utils.ProminentLayoutManager
 import ru.test.featuremain.databinding.*
-import ru.test.model.BestSellerVerticalItemMain
-import ru.test.model.CategoriesHorizontalItemMain
-import ru.test.model.HotSalesHorizontalItemMain
-import ru.test.model.MainListItem
-import ru.test.model.model.BestSeller
-import ru.test.model.model.Category
-import ru.test.model.model.HomeStore
+import ru.test.model.model.main.BestSellerVerticalItemMain
+import ru.test.model.model.main.CategoriesHorizontalItemMain
+import ru.test.model.model.main.HotSalesHorizontalItemMain
+import ru.test.model.model.main.MainListItem
+import ru.test.model.model.main.BestSeller
+import ru.test.model.model.main.Category
+import ru.test.model.model.main.HomeStore
 
 object MainScreenDelegates {
 

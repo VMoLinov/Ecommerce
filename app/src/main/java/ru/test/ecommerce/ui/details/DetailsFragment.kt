@@ -9,11 +9,11 @@ import ru.test.ecommerce.R
 import ru.test.ecommerce.databinding.FragmentDetailsBinding
 import ru.test.ecommerce.ui.details.adapter.DetailsListAdapter
 import ru.test.core.ui.BaseFragment
-import ru.test.core.viewBinding
-import ru.test.core.di.App
-import ru.test.core.ProminentLayoutManager
-import ru.test.core.RequestKeys
-import ru.test.model.model.DeviceDetails
+import ru.test.core.utils.viewBinding
+import ru.test.core.App
+import ru.test.core.utils.ProminentLayoutManager
+import ru.test.core.utils.RequestKeys
+import ru.test.model.model.details.DeviceDetails
 
 class DetailsFragment : BaseFragment(R.layout.fragment_details) {
 

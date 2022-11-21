@@ -3,13 +3,14 @@ package ru.test.ecommerce.ui.cart
 import com.bumptech.glide.RequestManager
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import ru.test.ecommerce.utils.BasketDiffUtilItemCallback
+import ru.test.model.model.cart.Basket
 
 class CartListAdapter(
     glide: RequestManager,
     onMinusClick: (Long) -> Unit,
     onPlusClick: (Long) -> Unit,
     onDeleteClick: (Long) -> Unit
-) : AsyncListDifferDelegationAdapter<ru.test.model.model.Basket>(BasketDiffUtilItemCallback()) {
+) : AsyncListDifferDelegationAdapter<Basket>(BasketDiffUtilItemCallback()) {
 
     init {
         delegatesManager.addDelegate(

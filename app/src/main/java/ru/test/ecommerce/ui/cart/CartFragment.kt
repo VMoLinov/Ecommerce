@@ -5,12 +5,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import ru.test.core.RequestKeys
+import ru.test.core.utils.RequestKeys
 import ru.test.ecommerce.R
 import ru.test.ecommerce.databinding.FragmentCartBinding
 import ru.test.core.ui.BaseFragment
-import ru.test.core.viewBinding
-import ru.test.core.di.App
+import ru.test.core.utils.viewBinding
+import ru.test.core.App
 
 class CartFragment : BaseFragment(R.layout.fragment_cart) {
 
