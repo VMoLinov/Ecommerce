@@ -3,11 +3,13 @@ package ru.test.featuremain.ui
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentResultListener
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import ru.test.core.App
 import ru.test.core.ui.BaseFragment
+import ru.test.core.ui.States
 import ru.test.core.utils.RequestKeys
 import ru.test.core.utils.viewBinding
 import ru.test.featuremain.R
@@ -47,10 +49,21 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         binding.mainHeader.filter.setOnClickListener {
             BottomSheet().show(requireActivity().supportFragmentManager, "TAG")
         }
-        viewModel.data.collectWhileStarted { adapter.items = it }
+        viewModel.data.collectWhileStarted {
+            when (it) {
+                is States.Success -> {
+                    loading(false)
+                    adapter.items = it.data
+                }
+                is States.Loading -> loading(true)
+                is States.Error -> showError(it.error)
+            }
+        }
         parentFragmentManager.setFragmentResultListener(REQUEST_FILTER, this, resultListener)
         parentFragmentManager.setFragmentResultListener(ADD_TO_CART, this, resultListener)
     }
+
+    private fun loading(isVisible: Boolean) = run { binding.loading.isVisible = isVisible }
 
     private val resultListener = FragmentResultListener { requestKey, result ->
         when (requestKey) {

@@ -3,10 +3,12 @@ package ru.test.featuredetails
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.PagerSnapHelper
 import ru.test.core.App
 import ru.test.core.ui.BaseFragment
+import ru.test.core.ui.States
 import ru.test.core.utils.ProminentLayoutManager
 import ru.test.core.utils.RequestKeys
 import ru.test.core.utils.viewBinding
@@ -25,15 +27,22 @@ class DetailsFragment : BaseFragment(R.layout.fragment_details) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.images.collectWhileStarted {
-            it?.let {
-                adapterImages.items = it.images
-                adapterSpec.items = it.specs
-                adapterSpec.initActiveItems()
-                initFields(it)
+        viewModel.details.collectWhileStarted {
+            when (it) {
+                is States.Success -> {
+                    loading(false)
+                    adapterImages.items = it.data.images
+                    adapterSpec.items = it.data.specs
+                    adapterSpec.initActiveItems()
+                    initFields(it.data)
+                }
+                is States.Loading -> loading(true)
+                is States.Error -> showError(it.error)
             }
         }
     }
+
+    private fun loading(isVisible: Boolean) = run { binding.loading.isVisible = isVisible }
 
     private fun initFields(data: DeviceDetails) = with(binding) {
         recyclerImages.layoutManager = ProminentLayoutManager(root.context)
