@@ -2,7 +2,7 @@ package ru.test.core.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import ru.test.core.interactor.Interactor
+import ru.test.domain.interactor.Interactor
 import javax.inject.Inject
 
 class AppViewModelFactory @Inject constructor(

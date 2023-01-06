@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
-import ru.test.core.interactor.Interactor
-import ru.test.model.model.details.DeviceDetails
+import ru.test.domain.detailsscreen.model.DeviceDetails
+import ru.test.domain.interactor.Interactor
 
 class DetailsViewModel(private val interactor: Interactor) : ViewModel() {
 

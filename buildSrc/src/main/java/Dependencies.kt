@@ -14,7 +14,7 @@ object Modules {
     const val app = ":app"
     const val core = ":core"
     const val network = ":network"
-    const val model = ":model"
+    const val domain = ":domain"
     const val featureMain = ":featureMain"
     const val featureDetails = ":featureDetails"
     const val featureCart = ":featureCart"

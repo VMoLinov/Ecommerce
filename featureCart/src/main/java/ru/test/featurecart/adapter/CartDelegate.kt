@@ -4,9 +4,9 @@ import com.bumptech.glide.RequestManager
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
-import ru.test.core.interactor.toPrice
+import ru.test.domain.cartscreen.model.Basket
+import ru.test.domain.interactor.toPrice
 import ru.test.featurecart.databinding.ItemRecycleCartBinding
-import ru.test.model.model.cart.Basket
 
 object CartDelegate {
 

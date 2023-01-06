@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
-import ru.test.core.interactor.Interactor
+import ru.test.domain.interactor.Interactor
 
 class BottomSheetViewModel(private val interactor: Interactor) : ViewModel() {
 

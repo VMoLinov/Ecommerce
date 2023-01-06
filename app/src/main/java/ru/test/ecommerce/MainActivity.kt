@@ -9,8 +9,8 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.badge.BadgeDrawable
-import ru.test.ecommerce.databinding.ActivityMainBinding
 import ru.test.core.utils.RequestKeys
+import ru.test.ecommerce.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

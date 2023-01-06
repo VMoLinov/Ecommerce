@@ -2,7 +2,7 @@ package ru.test.featuremain.adapter
 
 import com.bumptech.glide.RequestManager
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
-import ru.test.model.model.main.MainListItem
+import ru.test.domain.mainscreen.model.MainListItem
 
 class MainListAdapter(
     val glide: RequestManager,

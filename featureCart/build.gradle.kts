@@ -7,7 +7,7 @@ plugins {
 dependencies {
 
     implementation(project(Modules.core))
-    implementation(project(Modules.model))
+    implementation(project(Modules.domain))
 
     implementation(Android.appcompat)
     implementation(Android.material)

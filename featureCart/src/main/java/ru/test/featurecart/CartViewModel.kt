@@ -5,8 +5,8 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import ru.test.core.interactor.Interactor
-import ru.test.model.model.cart.Cart
+import ru.test.domain.cartscreen.model.Cart
+import ru.test.domain.interactor.Interactor
 
 class CartViewModel(private val interactor: Interactor) : ViewModel() {
 

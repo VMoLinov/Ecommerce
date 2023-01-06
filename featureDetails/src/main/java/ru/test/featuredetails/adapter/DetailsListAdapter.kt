@@ -1,8 +1,8 @@
 package ru.test.featuredetails.adapter
 
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
-import ru.test.model.model.details.ColorItem
-import ru.test.model.model.details.DetailsListItem
+import ru.test.domain.detailsscreen.model.ColorItem
+import ru.test.domain.detailsscreen.model.DetailsListItem
 
 internal class DetailsListAdapter : AsyncListDifferDelegationAdapter<DetailsListItem>(
     DetailsDiffUtilItemCallback()

@@ -5,9 +5,9 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import ru.test.core.utils.Filter
-import ru.test.core.interactor.Interactor
 import ru.test.core.utils.NoFilter
-import ru.test.model.model.main.MainListItem
+import ru.test.domain.interactor.Interactor
+import ru.test.domain.mainscreen.model.MainListItem
 
 class MainViewModel(private val interactor: Interactor) : ViewModel() {
 

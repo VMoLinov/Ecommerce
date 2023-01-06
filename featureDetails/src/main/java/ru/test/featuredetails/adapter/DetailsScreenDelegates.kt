@@ -10,13 +10,13 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
+import ru.test.domain.detailsscreen.model.ColorItem
+import ru.test.domain.detailsscreen.model.DetailsListItem
+import ru.test.domain.detailsscreen.model.ImageItem
+import ru.test.domain.detailsscreen.model.MemoryItem
 import ru.test.featuredetails.databinding.ItemRecycleImagesBinding
 import ru.test.featuredetails.databinding.ItemRecycleSpecColorBinding
 import ru.test.featuredetails.databinding.ItemRecycleSpecMemoryBinding
-import ru.test.model.model.details.ColorItem
-import ru.test.model.model.details.ImageItem
-import ru.test.model.model.details.MemoryItem
-import ru.test.model.model.details.DetailsListItem
 
 object DetailsScreenDelegates {
 

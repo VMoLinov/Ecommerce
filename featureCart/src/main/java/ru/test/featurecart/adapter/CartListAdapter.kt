@@ -2,7 +2,7 @@ package ru.test.featurecart.adapter
 
 import com.bumptech.glide.RequestManager
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
-import ru.test.model.model.cart.Basket
+import ru.test.domain.cartscreen.model.Basket
 
 class CartListAdapter(
     glide: RequestManager,

@@ -6,12 +6,12 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentResultListener
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import ru.test.core.utils.RequestKeys
 import ru.test.core.App
-import ru.test.featuremain.adapter.MainListAdapter
 import ru.test.core.ui.BaseFragment
+import ru.test.core.utils.RequestKeys
 import ru.test.core.utils.viewBinding
 import ru.test.featuremain.R
+import ru.test.featuremain.adapter.MainListAdapter
 import ru.test.featuremain.databinding.FragmentMainBinding
 import ru.test.featuremain.viewmodel.MainViewModel
 
