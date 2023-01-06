@@ -76,6 +76,16 @@
         app:layout_constraintTop_toTopOf="@id/childConstraint"
         tools:listitem="@layout/item_recycle_cart" />
 
+    <ProgressBar
+        android:id="@+id/loading"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerCart"
+        app:layout_constraintEnd_toEndOf="@id/recyclerCart"
+        app:layout_constraintStart_toStartOf="@id/recyclerCart"
+        app:layout_constraintTop_toTopOf="@id/recyclerCart" />
+
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
