@@ -6,7 +6,7 @@ plugins {
 
 dependencies {
 
-    implementation(project(Modules.network))
+    implementation(project(Modules.repository))
 
     implementation(Android.fragmentKtx)
     implementation(Dagger.dagger)

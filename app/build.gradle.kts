@@ -33,7 +33,7 @@ android {
 dependencies {
 
     implementation(project(Modules.core))
-    implementation(project(Modules.network))
+    implementation(project(Modules.repository))
     implementation(project(Modules.domain))
     implementation(project(Modules.featureMain))
     implementation(project(Modules.featureDetails))

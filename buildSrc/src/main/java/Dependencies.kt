@@ -13,14 +13,11 @@ object Releases {
 object Modules {
     const val app = ":app"
     const val core = ":core"
-    const val network = ":network"
+    const val repository = ":repository"
     const val domain = ":domain"
     const val featureMain = ":featureMain"
     const val featureDetails = ":featureDetails"
     const val featureCart = ":featureCart"
-
-    //Features
-    const val historyScreen = ":historyScreen"
 }
 
 object Versions {

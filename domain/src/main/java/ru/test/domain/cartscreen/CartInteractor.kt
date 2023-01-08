@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.map
 import ru.test.domain.cartscreen.model.Cart
 import ru.test.domain.interactor.getTotal
 import ru.test.domain.interactor.toCart
-import ru.test.network.NetworkSource
+import ru.test.repository.network.NetworkSource
 import javax.inject.Inject
 
 class CartInteractor @Inject constructor(private val network: NetworkSource) {

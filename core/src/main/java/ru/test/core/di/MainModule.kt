@@ -3,15 +3,15 @@ package ru.test.core.di
 import android.content.Context
 import dagger.Module
 import dagger.Provides
-import ru.test.domain.AppResourceProvider
-import ru.test.domain.ResourceProvider
 import ru.test.domain.cartscreen.CartInteractor
 import ru.test.domain.detailsscreen.DetailsInteractor
 import ru.test.domain.interactor.Interactor
 import ru.test.domain.interactor.InteractorImpl
 import ru.test.domain.mainscreen.MainInteractor
-import ru.test.network.NetworkSource
-import ru.test.network.RetrofitBuilder
+import ru.test.repository.local.AppResourceProvider
+import ru.test.repository.local.ResourceProvider
+import ru.test.repository.network.NetworkSource
+import ru.test.repository.network.RetrofitBuilder
 import javax.inject.Singleton
 
 @Module

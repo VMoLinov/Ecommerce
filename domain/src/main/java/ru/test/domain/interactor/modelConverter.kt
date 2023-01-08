@@ -5,7 +5,7 @@ import ru.test.domain.cartscreen.model.Cart
 import ru.test.domain.detailsscreen.model.*
 import ru.test.domain.mainscreen.model.BestSeller
 import ru.test.domain.mainscreen.model.HomeStore
-import ru.test.network.model.*
+import ru.test.repository.network.model.*
 import java.text.NumberFormat
 import java.util.*
 

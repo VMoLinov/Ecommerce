@@ -7,7 +7,7 @@ plugins {
 dependencies {
 
     implementation(project(Modules.domain))
-    implementation(project(Modules.network))
+    implementation(project(Modules.repository))
 
     implementation(Android.material)
     implementation(Android.fragmentKtx)
